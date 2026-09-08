@@ -7,6 +7,8 @@ import {
   CalendarClock,
   ArrowLeftRight,
   Wrench,
+  HandCoins,
+  Zap,
 } from "lucide-react";
 import type { Category } from "@/types/calculator";
 
@@ -52,6 +54,18 @@ export const categories: Category[] = [
     title: "Maten & Eenheden",
     description: "Eenheden en maten omrekenen.",
     icon: ArrowLeftRight,
+  },
+  {
+    slug: "toeslagen",
+    title: "Toeslagen",
+    description: "Zorgtoeslag en andere overheidstoeslagen berekenen.",
+    icon: HandCoins,
+  },
+  {
+    slug: "energie",
+    title: "Energie",
+    description: "Energieverbruik en -kosten berekenen.",
+    icon: Zap,
   },
   {
     slug: "overige",

@@ -9,6 +9,8 @@ export type CategorySlug =
   | "btw-belastingen"
   | "tijd"
   | "maten-eenheden"
+  | "toeslagen"
+  | "energie"
   | "overige";
 
 export interface Category {

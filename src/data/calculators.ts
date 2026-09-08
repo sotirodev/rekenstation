@@ -16,6 +16,12 @@ import { zzpUurtariefConfig } from "@/calculators/zzp-uurtarief/config";
 import { zwangerschapConfig } from "@/calculators/zwangerschap/config";
 import { bijtellingConfig } from "@/calculators/bijtelling/config";
 import { overdrachtsbelastingConfig } from "@/calculators/overdrachtsbelasting/config";
+import { zorgtoeslagConfig } from "@/calculators/zorgtoeslag/config";
+import { transitievergoedingConfig } from "@/calculators/transitievergoeding/config";
+import { vakantiedagenConfig } from "@/calculators/vakantiedagen/config";
+import { energieverbruikConfig } from "@/calculators/energieverbruik/config";
+import { spaarrenteConfig } from "@/calculators/spaarrente/config";
+import { ovulatieConfig } from "@/calculators/ovulatie/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -41,6 +47,12 @@ export const calculators: CalculatorConfig[] = [
   zwangerschapConfig,
   bijtellingConfig,
   overdrachtsbelastingConfig,
+  zorgtoeslagConfig,
+  transitievergoedingConfig,
+  vakantiedagenConfig,
+  energieverbruikConfig,
+  spaarrenteConfig,
+  ovulatieConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {
