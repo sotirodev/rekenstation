@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getPopularCalculators } from "@/data/calculators";
+import { calculators, getPopularCalculators } from "@/data/calculators";
 import { categories } from "@/data/categories";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
-import { CalculatorExplorer } from "@/components/calculator/CalculatorExplorer";
 import { HeroSearch } from "@/components/calculator/HeroSearch";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -62,29 +61,19 @@ export default function Home() {
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-foreground">Categorieën</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 flex flex-wrap gap-3">
             {categories.map((category) => {
               const Icon = category.icon;
               return (
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}
-                  className="group flex flex-col gap-3 rounded-xl border border-border bg-background p-5 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-brand hover:shadow-md"
+                  className="group flex items-center gap-2 rounded-full border border-border bg-background py-2 pl-2.5 pr-4 text-sm font-medium text-foreground transition-all duration-150 hover:border-brand hover:text-brand-dark hover:shadow-sm"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-brand-dark transition-transform duration-200 group-hover:scale-110">
-                    <Icon className="h-5 w-5" strokeWidth={2} aria-hidden />
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-mint text-brand-dark transition-transform duration-150 group-hover:scale-110">
+                    <Icon className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
                   </span>
-                  <div>
-                    <h3 className="font-semibold text-foreground">{category.title}</h3>
-                    <p className="mt-1 text-sm text-muted">{category.description}</p>
-                  </div>
-                  <span className="mt-auto flex items-center gap-1 text-sm font-medium text-brand-dark">
-                    Bekijken
-                    <ArrowRight
-                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                      aria-hidden
-                    />
-                  </span>
+                  {category.title}
                 </Link>
               );
             })}
@@ -92,16 +81,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-foreground">Alle calculators</h2>
-          <Link href="/calculators" className="text-sm font-medium text-brand-dark hover:underline">
-            Bekijk alles
-          </Link>
-        </div>
-        <div className="mt-6">
-          <CalculatorExplorer />
-        </div>
+      <section className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-semibold text-foreground">En nog veel meer</h2>
+        <p className="mx-auto mt-2 max-w-xl text-muted">
+          In totaal staan er {calculators.length} calculators klaar, doorzoekbaar op onderwerp.
+        </p>
+        <Link
+          href="/calculators"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
+        >
+          Bekijk alle calculators
+          <ArrowRight className="h-4 w-4" aria-hidden />
+        </Link>
       </section>
 
       <section className="border-t border-border bg-surface">
