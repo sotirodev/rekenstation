@@ -17,7 +17,7 @@ export const autokostenConfig: CalculatorConfig = {
     heading: "Hoe worden de autokosten berekend?",
     body: [
       "Deze calculator telt je brandstofkosten (op basis van kilometers en verbruik) op bij je vaste maandelijkse kosten: verzekering, wegenbelasting, onderhoud en afschrijving. Zo krijg je een compleet overzicht van je autokosten per maand, per jaar en per kilometer.",
-      "Vul voor onderhoud en afschrijving een gemiddeld maandbedrag in — bijvoorbeeld de jaarlijkse kosten gedeeld door 12.",
+      "Vul voor onderhoud en afschrijving een gemiddeld maandbedrag in, bijvoorbeeld de jaarlijkse kosten gedeeld door 12.",
     ],
   },
   faq: [

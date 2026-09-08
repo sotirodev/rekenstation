@@ -13,11 +13,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rekenstation.nl"),
   title: {
-    default: "Rekenstation — Handige online calculators voor dagelijks gebruik",
+    default: "Rekenstation: Handige online calculators voor dagelijks gebruik",
     template: "%s | Rekenstation",
   },
   description:
-    "Handige online calculators voor geld, werk, wonen, auto, gezondheid en meer. Snel, gratis en betrouwbaar.",
+    "Gratis online calculators voor geld, werk, wonen, auto, gezondheid en meer, met resultaat in een paar seconden.",
   keywords: [
     "calculator",
     "rekentool",

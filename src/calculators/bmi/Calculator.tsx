@@ -67,7 +67,7 @@ export function BmiCalculator() {
           />
           <p className="mt-3 text-xs text-muted">
             De BMI is een indicatie en houdt geen rekening met spiermassa, leeftijd of
-            lichaamsbouw. Dit is geen medisch advies — raadpleeg bij twijfel een arts.
+            lichaamsbouw. Dit is geen medisch advies. Raadpleeg bij twijfel een arts.
           </p>
         </div>
       )}

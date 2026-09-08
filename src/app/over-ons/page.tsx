@@ -17,20 +17,16 @@ export default function OverOnsPage() {
 
       <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-foreground/90">
         <p>
-          Rekenstation.nl is een Nederlandse website met handige online calculators voor
-          dagelijks gebruik. Van je nettosalaris tot je hypotheeklasten: wij willen dat je in een
-          paar seconden een duidelijk antwoord krijgt, zonder ingewikkelde formulieren of
-          overbodige stappen.
+          Rekenstation.nl is een Nederlandse website met online calculators voor dagelijks
+          gebruik, van je nettosalaris tot je hypotheeklasten. Je vult iets in en krijgt direct
+          een antwoord, zonder overbodige stappen.
         </p>
         <p>
-          Het doel van Rekenstation is simpel: praktische berekeningen op het gebied van geld,
-          werk, wonen, gezondheid en meer eenvoudig toegankelijk maken voor iedereen. Onze
-          calculators zijn gebaseerd op officiële bronnen waar dat relevant is, zoals de
+          De calculators zijn gebaseerd op officiële bronnen waar dat relevant is, zoals de
           Belastingdienst, en worden bijgewerkt wanneer regels of tarieven veranderen.
         </p>
         <p>
-          Rekenstation is en blijft in ontwikkeling — we voegen regelmatig nieuwe calculators toe
-          om je nog beter te helpen.
+          Er komen regelmatig nieuwe calculators bij.
         </p>
       </div>
     </div>

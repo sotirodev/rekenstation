@@ -16,7 +16,7 @@ export const zwangerschapConfig: CalculatorConfig = {
     heading: "Hoe wordt de uitgerekende datum berekend?",
     body: [
       "Deze calculator gebruikt de regel van Naegele: de uitgerekende datum is 280 dagen (40 weken) na de eerste dag van je laatste menstruatie, uitgaande van een gemiddelde cyclus van 28 dagen.",
-      "Slechts een klein percentage van de baby's wordt exact op de uitgerekende datum geboren — de meeste bevallingen vinden plaats in de periode van een paar weken daaromheen.",
+      "Slechts een klein percentage van de baby's wordt exact op de uitgerekende datum geboren; de meeste bevallingen vinden plaats in de weken daaromheen.",
     ],
   },
   faq: [

@@ -101,9 +101,8 @@ export default function Home() {
         <div className="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold text-foreground">Over Rekenstation</h2>
           <p className="mt-3 text-sm text-muted">
-            Rekenstation.nl helpt je om snel en betrouwbaar de dagelijkse berekeningen te maken die
-            ertoe doen — van je nettosalaris tot je hypotheeklasten. Geen ingewikkelde formulieren,
-            gewoon direct antwoord.
+            Rekenstation.nl helpt je om dagelijkse berekeningen snel en betrouwbaar te maken, van je
+            nettosalaris tot je hypotheeklasten, zonder ingewikkelde formulieren.
           </p>
         </div>
       </section>

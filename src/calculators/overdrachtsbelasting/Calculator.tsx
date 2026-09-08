@@ -99,7 +99,7 @@ export function OverdrachtsbelastingCalculator() {
           )}
           <p className="mt-3 text-xs text-muted">
             De startersvrijstelling geldt alleen als de aankoopprijs niet boven de geldende
-            woningwaardegrens uitkomt — kom je daar ook maar €1 boven, dan vervalt de vrijstelling
+            woningwaardegrens uitkomt. Kom je daar ook maar €1 boven, dan vervalt de vrijstelling
             volledig en geldt het hoofdverblijf-tarief van 2%.
           </p>
         </div>

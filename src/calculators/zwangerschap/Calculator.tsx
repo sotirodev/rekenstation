@@ -49,8 +49,8 @@ export function ZwangerschapCalculator() {
           />
           <p className="mt-3 text-xs text-muted">
             Dit is een indicatieve berekening volgens de regel van Naegele. Slechts een klein deel van
-            de bevallingen vindt precies op de uitgerekende datum plaats. Dit is geen medisch advies —
-            raadpleeg je verloskundige of arts voor een exacte inschatting.
+            de bevallingen vindt precies op de uitgerekende datum plaats. Dit is geen medisch advies.
+            Raadpleeg je verloskundige of arts voor een exacte inschatting.
           </p>
         </div>
       )}

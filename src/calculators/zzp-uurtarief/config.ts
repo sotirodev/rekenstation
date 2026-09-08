@@ -17,7 +17,7 @@ export const zzpUurtariefConfig: CalculatorConfig = {
     heading: "Hoe wordt het uurtarief berekend?",
     body: [
       "Deze calculator rekent je gewenste nettojaarinkomen om naar het brutobedrag dat je moet omzetten, gebaseerd op een reservering voor belasting en premies. Daar worden je zakelijke kosten bij opgeteld, en het totaal wordt gedeeld door je factureerbare uren per jaar.",
-      "Factureerbare uren zijn de uren die je daadwerkelijk kunt doorberekenen aan klanten — reken dus vakantie, ziekte, administratie en acquisitie er niet bij.",
+      "Factureerbare uren zijn de uren die je daadwerkelijk kunt doorberekenen aan klanten. Reken vakantie, ziekte, administratie en acquisitie er dus niet bij.",
     ],
   },
   faq: [
@@ -29,7 +29,7 @@ export const zzpUurtariefConfig: CalculatorConfig = {
     {
       question: "Waarom een reservering voor belasting?",
       answer:
-        "Als zzp'er houdt niemand loonheffing voor je in — je moet zelf reserveren voor inkomstenbelasting en de premie Zvw, meestal 30-40% van je winst.",
+        "Als zzp'er houdt niemand loonheffing voor je in: je moet zelf reserveren voor inkomstenbelasting en de premie Zvw, meestal 30-40% van je winst.",
     },
   ],
   relatedSlugs: ["bruto-netto-calculator", "uurloon-calculator"],

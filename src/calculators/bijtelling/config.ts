@@ -23,7 +23,7 @@ export const bijtellingConfig: CalculatorConfig = {
     {
       question: "Wat kost de bijtelling mij netto per maand?",
       answer:
-        "De bijtelling wordt bij je belastbaar inkomen opgeteld. Wat dit je netto kost, hangt af van je marginale belastingtarief — gebruik de bruto-netto calculator om dit effect in te schatten.",
+        "De bijtelling wordt bij je belastbaar inkomen opgeteld. Wat dit je netto kost, hangt af van je marginale belastingtarief; gebruik de bruto-netto calculator om dit effect in te schatten.",
     },
     {
       question: "Verandert mijn bijtellingspercentage als de tarieven wijzigen?",
