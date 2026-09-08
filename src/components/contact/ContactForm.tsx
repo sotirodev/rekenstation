@@ -6,11 +6,14 @@ export function ContactForm() {
   const [naam, setNaam] = useState("");
   const [email, setEmail] = useState("");
   const [bericht, setBericht] = useState("");
+  const [website, setWebsite] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "versturen" | "verstuurd" | "mislukt">("idle");
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  function handleSubmit(event: FormEvent) {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault();
+    setServerError(null);
 
     const nextErrors: Record<string, string> = {};
     if (naam.trim() === "") nextErrors.naam = "Vul je naam in.";
@@ -22,26 +25,52 @@ export function ContactForm() {
     }
 
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length === 0) {
-      setSubmitted(true);
+    if (Object.keys(nextErrors).length > 0) return;
+
+    setStatus("versturen");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ naam, email, bericht, website }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        setServerError(data?.error ?? "Het bericht kon niet worden verstuurd.");
+        setStatus("mislukt");
+        return;
+      }
+
+      setStatus("verstuurd");
+    } catch {
+      setServerError("Er ging iets mis. Controleer je internetverbinding en probeer het opnieuw.");
+      setStatus("mislukt");
     }
   }
 
-  if (submitted) {
+  if (status === "verstuurd") {
     return (
       <div className="rounded-xl border border-border bg-mint p-6 text-sm text-brand-dark">
-        Bedankt, je invoer is gevalideerd. Dit contactformulier is nog niet gekoppeld aan een
-        verzendservice. Neem voor nu contact op via{" "}
-        <a href="mailto:contact@rekenstation.nl" className="underline">
-          contact@rekenstation.nl
-        </a>
-        .
+        Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-surface p-6">
+      <div className="hidden" aria-hidden>
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(event) => setWebsite(event.target.value)}
+        />
+      </div>
+
       <div>
         <label htmlFor="naam" className="mb-1.5 block text-sm font-medium text-foreground">
           Naam
@@ -83,11 +112,14 @@ export function ContactForm() {
         {errors.bericht && <p className="mt-1.5 text-sm text-danger">{errors.bericht}</p>}
       </div>
 
+      {serverError && <p className="text-sm text-danger">{serverError}</p>}
+
       <button
         type="submit"
-        className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
+        disabled={status === "versturen"}
+        className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Versturen
+        {status === "versturen" ? "Versturen..." : "Versturen"}
       </button>
     </form>
   );
