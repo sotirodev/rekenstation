@@ -31,5 +31,6 @@ export const overdrachtsbelastingConfig: CalculatorConfig = {
     },
   ],
   relatedSlugs: ["hypotheek-calculator", "bruto-netto-calculator"],
+  popular: true,
   Component: OverdrachtsbelastingCalculator,
 };
