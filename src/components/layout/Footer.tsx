@@ -32,7 +32,7 @@ export function Footer() {
             <ul className="mt-3 space-y-2">
               {calculatorLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted hover:text-brand-dark">
+                  <Link href={link.href} className="text-sm text-muted transition-colors duration-150 hover:text-brand-dark">
                     {link.label}
                   </Link>
                 </li>
@@ -45,7 +45,7 @@ export function Footer() {
             <ul className="mt-3 space-y-2">
               {overigeLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted hover:text-brand-dark">
+                  <Link href={link.href} className="text-sm text-muted transition-colors duration-150 hover:text-brand-dark">
                     {link.label}
                   </Link>
                 </li>

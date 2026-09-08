@@ -18,10 +18,23 @@ export const metadata: Metadata = {
   },
   description:
     "Handige online calculators voor geld, werk, wonen, auto, gezondheid en meer. Snel, gratis en betrouwbaar.",
+  keywords: [
+    "calculator",
+    "rekentool",
+    "bruto netto calculator",
+    "hypotheek calculator",
+    "BTW calculator",
+    "BMI calculator",
+    "online calculators Nederland",
+  ],
+  authors: [{ name: "Rekenstation" }],
   openGraph: {
     type: "website",
     locale: "nl_NL",
     siteName: "Rekenstation",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 

@@ -8,9 +8,9 @@ export function CalculatorCard({ calculator }: { calculator: CalculatorConfig })
   return (
     <Link
       href={`/${calculator.slug}`}
-      className="group flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 transition-colors hover:border-brand"
+      className="group flex flex-col gap-3 rounded-xl border border-border bg-surface p-5 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-brand hover:shadow-md"
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-brand-dark">
+      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-brand-dark transition-transform duration-200 group-hover:scale-110">
         <Icon className="h-5 w-5" strokeWidth={2} aria-hidden />
       </span>
       <div>

@@ -9,6 +9,13 @@ import { autokostenConfig } from "@/calculators/autokosten/config";
 import { leeftijdConfig } from "@/calculators/leeftijd/config";
 import { uurloonConfig } from "@/calculators/uurloon/config";
 import { brandstofkostenConfig } from "@/calculators/brandstofkosten/config";
+import { eenhedenConfig } from "@/calculators/eenheden/config";
+import { datumverschilConfig } from "@/calculators/datumverschil/config";
+import { vakantiegeldConfig } from "@/calculators/vakantiegeld/config";
+import { zzpUurtariefConfig } from "@/calculators/zzp-uurtarief/config";
+import { zwangerschapConfig } from "@/calculators/zwangerschap/config";
+import { bijtellingConfig } from "@/calculators/bijtelling/config";
+import { overdrachtsbelastingConfig } from "@/calculators/overdrachtsbelasting/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -27,6 +34,13 @@ export const calculators: CalculatorConfig[] = [
   leeftijdConfig,
   uurloonConfig,
   brandstofkostenConfig,
+  eenhedenConfig,
+  datumverschilConfig,
+  vakantiegeldConfig,
+  zzpUurtariefConfig,
+  zwangerschapConfig,
+  bijtellingConfig,
+  overdrachtsbelastingConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {

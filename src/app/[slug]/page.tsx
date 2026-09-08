@@ -2,9 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { calculators, getCalculator, getCalculatorsByCategory } from "@/data/calculators";
 import { categories, getCategory } from "@/data/categories";
+import type { CalculatorConfig } from "@/types/calculator";
 import { CalculatorShell } from "@/components/calculator/CalculatorShell";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
+
+function buildKeywords(calculator: CalculatorConfig): string[] {
+  const category = getCategory(calculator.category);
+  return [
+    calculator.title.toLowerCase(),
+    calculator.shortTitle.toLowerCase(),
+    `${calculator.shortTitle.toLowerCase()} berekenen`,
+    `gratis ${calculator.shortTitle.toLowerCase()}`,
+    ...(category ? [category.title.toLowerCase()] : []),
+  ];
+}
 
 export function generateStaticParams() {
   return [
@@ -23,10 +35,12 @@ export async function generateMetadata({
     return {
       title: calculator.title,
       description: calculator.metaDescription,
+      keywords: buildKeywords(calculator),
       alternates: { canonical: `/${calculator.slug}` },
       openGraph: {
         title: calculator.title,
         description: calculator.metaDescription,
+        type: "website",
       },
     };
   }
@@ -36,6 +50,7 @@ export async function generateMetadata({
     return {
       title: `${category.title} calculators`,
       description: category.description,
+      keywords: [category.title.toLowerCase(), `${category.title.toLowerCase()} calculators`],
       alternates: { canonical: `/${category.slug}` },
     };
   }

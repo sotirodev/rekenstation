@@ -5,12 +5,36 @@ import { categories } from "@/data/categories";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
 import { CalculatorExplorer } from "@/components/calculator/CalculatorExplorer";
 import { HeroSearch } from "@/components/calculator/HeroSearch";
+import { JsonLd } from "@/components/seo/JsonLd";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "Rekenstation",
+      url: "https://rekenstation.nl",
+      logo: "https://rekenstation.nl/icon.svg",
+    },
+    {
+      "@type": "WebSite",
+      name: "Rekenstation",
+      url: "https://rekenstation.nl",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://rekenstation.nl/calculators?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   const populaireCalculators = getPopularCalculators();
 
   return (
     <div>
+      <JsonLd data={jsonLd} />
       <section className="border-b border-border bg-surface">
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold tracking-tight text-ink dark:text-foreground sm:text-5xl">
@@ -45,9 +69,9 @@ export default function Home() {
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}
-                  className="group flex flex-col gap-3 rounded-xl border border-border bg-background p-5 transition-colors hover:border-brand"
+                  className="group flex flex-col gap-3 rounded-xl border border-border bg-background p-5 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-brand hover:shadow-md"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-brand-dark">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint text-brand-dark transition-transform duration-200 group-hover:scale-110">
                     <Icon className="h-5 w-5" strokeWidth={2} aria-hidden />
                   </span>
                   <div>

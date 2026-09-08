@@ -11,23 +11,23 @@ export function Header() {
         <Logo />
 
         <nav className="hidden items-center gap-6 md:flex">
-          <Link href="/" className="text-sm font-medium text-foreground hover:text-brand-dark">
+          <Link href="/" className="text-sm font-medium text-foreground transition-colors duration-150 hover:text-brand-dark">
             Home
           </Link>
           <Link
             href="/calculators"
-            className="text-sm font-medium text-foreground hover:text-brand-dark"
+            className="text-sm font-medium text-foreground transition-colors duration-150 hover:text-brand-dark"
           >
             Alle calculators
           </Link>
           <CategoryMegaMenu />
           <Link
             href="/over-ons"
-            className="text-sm font-medium text-foreground hover:text-brand-dark"
+            className="text-sm font-medium text-foreground transition-colors duration-150 hover:text-brand-dark"
           >
             Over ons
           </Link>
-          <Link href="/contact" className="text-sm font-medium text-foreground hover:text-brand-dark">
+          <Link href="/contact" className="text-sm font-medium text-foreground transition-colors duration-150 hover:text-brand-dark">
             Contact
           </Link>
         </nav>
