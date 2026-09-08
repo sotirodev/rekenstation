@@ -22,6 +22,11 @@ import { vakantiedagenConfig } from "@/calculators/vakantiedagen/config";
 import { energieverbruikConfig } from "@/calculators/energieverbruik/config";
 import { spaarrenteConfig } from "@/calculators/spaarrente/config";
 import { ovulatieConfig } from "@/calculators/ovulatie/config";
+import { studieschuldConfig } from "@/calculators/studieschuld/config";
+import { studentenbudgetConfig } from "@/calculators/studentenbudget/config";
+import { zonnepanelenConfig } from "@/calculators/zonnepanelen/config";
+import { warmtepompConfig } from "@/calculators/warmtepomp/config";
+import { elektrischVsBenzineConfig } from "@/calculators/elektrisch-vs-benzine/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -53,6 +58,11 @@ export const calculators: CalculatorConfig[] = [
   energieverbruikConfig,
   spaarrenteConfig,
   ovulatieConfig,
+  studieschuldConfig,
+  studentenbudgetConfig,
+  zonnepanelenConfig,
+  warmtepompConfig,
+  elektrischVsBenzineConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {

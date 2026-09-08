@@ -11,6 +11,8 @@ export type CategorySlug =
   | "maten-eenheden"
   | "toeslagen"
   | "energie"
+  | "studie"
+  | "duurzaamheid"
   | "overige";
 
 export interface Category {

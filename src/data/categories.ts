@@ -9,6 +9,8 @@ import {
   Wrench,
   HandCoins,
   Zap,
+  GraduationCap,
+  Leaf,
 } from "lucide-react";
 import type { Category } from "@/types/calculator";
 
@@ -66,6 +68,18 @@ export const categories: Category[] = [
     title: "Energie",
     description: "Energieverbruik en -kosten berekenen.",
     icon: Zap,
+  },
+  {
+    slug: "studie",
+    title: "Studie",
+    description: "Studieschuld en studentenbudget berekenen.",
+    icon: GraduationCap,
+  },
+  {
+    slug: "duurzaamheid",
+    title: "Duurzaamheid",
+    description: "Zonnepanelen, warmtepomp en elektrisch rijden berekenen.",
+    icon: Leaf,
   },
   {
     slug: "overige",
