@@ -8,8 +8,8 @@ import { formatNumber } from "@/lib/formatting/number";
 import { berekenVakantiedagen } from "@/lib/calculations/vakantiedagen";
 
 export function VakantiedagenCalculator() {
-  const [urenPerWeek, setUrenPerWeek] = useState("40");
-  const [dagenPerWeek, setDagenPerWeek] = useState("5");
+  const [urenPerWeek, setUrenPerWeek] = useState("");
+  const [dagenPerWeek, setDagenPerWeek] = useState("");
 
   const urenValidation = validateNumberInput(urenPerWeek, { fieldLabel: "uren per week", min: 0, max: 60 });
   const dagenValidation = validateNumberInput(dagenPerWeek, { fieldLabel: "dagen per week", min: 1, max: 7 });

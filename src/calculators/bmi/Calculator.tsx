@@ -15,8 +15,8 @@ const categorieLabels: Record<BmiCategorie, string> = {
 };
 
 export function BmiCalculator() {
-  const [gewicht, setGewicht] = useState("75");
-  const [lengte, setLengte] = useState("180");
+  const [gewicht, setGewicht] = useState("");
+  const [lengte, setLengte] = useState("");
 
   const gewichtValidation = validateNumberInput(gewicht, {
     fieldLabel: "gewicht",

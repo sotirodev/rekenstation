@@ -13,7 +13,7 @@ import {
 } from "@/lib/calculations/vakantiegeld";
 
 export function VakantiegeldCalculator() {
-  const [brutoloon, setBrutoloon] = useState("3000");
+  const [brutoloon, setBrutoloon] = useState("");
   const [periode, setPeriode] = useState<VakantiegeldPeriode>("maand");
   const [percentage, setPercentage] = useState(String(WETTELIJK_MINIMUM_VAKANTIEGELD_PERCENTAGE));
 

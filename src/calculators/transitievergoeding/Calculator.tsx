@@ -14,7 +14,7 @@ import {
 } from "@/lib/calculations/transitievergoeding";
 
 export function TransitievergoedingCalculator() {
-  const [salaris, setSalaris] = useState("3000");
+  const [salaris, setSalaris] = useState("");
   const [startdatum, setStartdatum] = useState("");
   const [einddatum, setEinddatum] = useState("");
   const [jaar, setJaar] = useState(TRANSITIEVERGOEDING_JAREN[0]);

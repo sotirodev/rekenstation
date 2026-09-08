@@ -33,7 +33,7 @@ const EENHEID_LABELS: Record<LengteEenheid | GewichtEenheid, string> = {
 
 export function EenhedenCalculator() {
   const [categorie, setCategorie] = useState<EenhedenCategorie>("lengte");
-  const [waarde, setWaarde] = useState("1");
+  const [waarde, setWaarde] = useState("");
   const [van, setVan] = useState<string>("m");
   const [naar, setNaar] = useState<string>("cm");
 

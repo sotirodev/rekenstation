@@ -10,8 +10,8 @@ import { berekenUurloon, type UurloonModus } from "@/lib/calculations/uurloon";
 
 export function UurloonCalculator() {
   const [modus, setModus] = useState<UurloonModus>("salaris-naar-uurloon");
-  const [bedrag, setBedrag] = useState("3000");
-  const [uren, setUren] = useState("40");
+  const [bedrag, setBedrag] = useState("");
+  const [uren, setUren] = useState("");
 
   const bedragValidation = validateNumberInput(bedrag, {
     fieldLabel: modus === "salaris-naar-uurloon" ? "brutosalaris" : "uurloon",

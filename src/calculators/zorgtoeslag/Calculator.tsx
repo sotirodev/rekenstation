@@ -9,7 +9,7 @@ import { formatCurrency } from "@/lib/formatting/currency";
 import { berekenZorgtoeslag, ZORGTOESLAG_JAREN } from "@/lib/calculations/zorgtoeslag";
 
 export function ZorgtoeslagCalculator() {
-  const [inkomen, setInkomen] = useState("25000");
+  const [inkomen, setInkomen] = useState("");
   const [toeslagpartner, setToeslagpartner] = useState(false);
   const [jaar, setJaar] = useState(ZORGTOESLAG_JAREN[0]);
 

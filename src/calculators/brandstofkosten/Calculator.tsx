@@ -9,9 +9,9 @@ import { formatNumber } from "@/lib/formatting/number";
 import { berekenBrandstofkosten } from "@/lib/calculations/brandstofkosten";
 
 export function BrandstofkostenCalculator() {
-  const [afstand, setAfstand] = useState("100");
-  const [verbruik, setVerbruik] = useState("6.5");
-  const [prijs, setPrijs] = useState("1.95");
+  const [afstand, setAfstand] = useState("");
+  const [verbruik, setVerbruik] = useState("");
+  const [prijs, setPrijs] = useState("");
 
   const afstandValidation = validateNumberInput(afstand, { fieldLabel: "afstand", min: 0, max: 100_000 });
   const verbruikValidation = validateNumberInput(verbruik, { fieldLabel: "brandstofverbruik", min: 0, max: 100 });

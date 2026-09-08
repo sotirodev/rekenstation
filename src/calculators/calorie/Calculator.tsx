@@ -22,9 +22,9 @@ const ACTIVITEIT_OPTIES: { value: Activiteitsniveau; label: string }[] = [
 
 export function CalorieCalculator() {
   const [geslacht, setGeslacht] = useState<Geslacht>("vrouw");
-  const [leeftijd, setLeeftijd] = useState("30");
-  const [lengte, setLengte] = useState("170");
-  const [gewicht, setGewicht] = useState("70");
+  const [leeftijd, setLeeftijd] = useState("");
+  const [lengte, setLengte] = useState("");
+  const [gewicht, setGewicht] = useState("");
   const [activiteitsniveau, setActiviteitsniveau] = useState<Activiteitsniveau>("licht-actief");
 
   const leeftijdValidation = validateNumberInput(leeftijd, { fieldLabel: "leeftijd", min: 1, max: 120 });

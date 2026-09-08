@@ -15,7 +15,7 @@ const modusOpties: { value: BtwModus; label: string }[] = [
 ];
 
 export function BtwCalculator() {
-  const [bedrag, setBedrag] = useState("100");
+  const [bedrag, setBedrag] = useState("");
   const [tarief, setTarief] = useState<BtwTarief>(21);
   const [modus, setModus] = useState<BtwModus>("excl-naar-incl");
 

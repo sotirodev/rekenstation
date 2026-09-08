@@ -8,13 +8,13 @@ import { formatCurrency } from "@/lib/formatting/currency";
 import { berekenAutokosten } from "@/lib/calculations/autokosten";
 
 export function AutokostenCalculator() {
-  const [km, setKm] = useState("1200");
-  const [verbruik, setVerbruik] = useState("6.5");
-  const [prijs, setPrijs] = useState("1.95");
-  const [verzekering, setVerzekering] = useState("80");
-  const [wegenbelasting, setWegenbelasting] = useState("40");
-  const [onderhoud, setOnderhoud] = useState("50");
-  const [afschrijving, setAfschrijving] = useState("150");
+  const [km, setKm] = useState("");
+  const [verbruik, setVerbruik] = useState("");
+  const [prijs, setPrijs] = useState("");
+  const [verzekering, setVerzekering] = useState("");
+  const [wegenbelasting, setWegenbelasting] = useState("");
+  const [onderhoud, setOnderhoud] = useState("");
+  const [afschrijving, setAfschrijving] = useState("");
 
   const fields = {
     km: validateNumberInput(km, { fieldLabel: "aantal kilometers", min: 0, max: 100_000 }),

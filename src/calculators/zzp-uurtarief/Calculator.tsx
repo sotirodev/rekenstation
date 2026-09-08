@@ -8,9 +8,9 @@ import { formatCurrency } from "@/lib/formatting/currency";
 import { berekenZzpUurtarief } from "@/lib/calculations/zzp-uurtarief";
 
 export function ZzpUurtariefCalculator() {
-  const [nettoInkomen, setNettoInkomen] = useState("45000");
-  const [kosten, setKosten] = useState("6000");
-  const [uren, setUren] = useState("1200");
+  const [nettoInkomen, setNettoInkomen] = useState("");
+  const [kosten, setKosten] = useState("");
+  const [uren, setUren] = useState("");
   const [reservering, setReservering] = useState("35");
 
   const nettoValidation = validateNumberInput(nettoInkomen, {

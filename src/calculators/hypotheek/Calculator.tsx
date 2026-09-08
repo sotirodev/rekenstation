@@ -9,9 +9,9 @@ import { formatCurrency } from "@/lib/formatting/currency";
 import { berekenHypotheek, type AflossingsVorm } from "@/lib/calculations/hypotheek";
 
 export function HypotheekCalculator() {
-  const [bedrag, setBedrag] = useState("350000");
-  const [rente, setRente] = useState("3.8");
-  const [looptijd, setLooptijd] = useState("30");
+  const [bedrag, setBedrag] = useState("");
+  const [rente, setRente] = useState("");
+  const [looptijd, setLooptijd] = useState("");
   const [vorm, setVorm] = useState<AflossingsVorm>("annuitair");
 
   const bedragValidation = validateNumberInput(bedrag, {

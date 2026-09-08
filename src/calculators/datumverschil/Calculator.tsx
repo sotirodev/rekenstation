@@ -6,12 +6,8 @@ import { ResultCard } from "@/components/calculator/ResultCard";
 import { formatNumber } from "@/lib/formatting/number";
 import { berekenDatumVerschil } from "@/lib/calculations/datumverschil";
 
-function vandaagIso(): string {
-  return new Date().toISOString().slice(0, 10);
-}
-
 export function DatumVerschilCalculator() {
-  const [datumA, setDatumA] = useState(vandaagIso());
+  const [datumA, setDatumA] = useState("");
   const [datumB, setDatumB] = useState("");
 
   const foutA = datumA === "" ? "Vul de eerste datum in." : undefined;

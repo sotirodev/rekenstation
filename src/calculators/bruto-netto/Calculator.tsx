@@ -43,7 +43,7 @@ function valideerGeboortedatum(waarde: string): string | undefined {
 }
 
 export function BrutoNettoCalculator() {
-  const [bruto, setBruto] = useState("3000");
+  const [bruto, setBruto] = useState("");
   const [periode, setPeriode] = useState<SalarisPeriode>("maand");
   const [belastingjaar, setBelastingjaar] = useState(defaultTaxYear);
   const [geboortedatum, setGeboortedatum] = useState("");

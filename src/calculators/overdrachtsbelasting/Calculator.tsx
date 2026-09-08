@@ -15,7 +15,7 @@ import {
 } from "@/lib/calculations/overdrachtsbelasting";
 
 export function OverdrachtsbelastingCalculator() {
-  const [aankoopprijs, setAankoopprijs] = useState("350000");
+  const [aankoopprijs, setAankoopprijs] = useState("");
   const [situatie, setSituatie] = useState<WoningSituatie>("hoofdverblijf");
   const [startersvrijstelling, setStartersvrijstelling] = useState(false);
   const [jaar, setJaar] = useState(OVERDRACHTSBELASTING_JAREN[0]);

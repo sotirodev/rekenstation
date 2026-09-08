@@ -10,7 +10,7 @@ import { formatNumber } from "@/lib/formatting/number";
 import { berekenBijtelling, BIJTELLING_JAREN, type Brandstoftype } from "@/lib/calculations/bijtelling";
 
 export function BijtellingCalculator() {
-  const [cataloguswaarde, setCataloguswaarde] = useState("45000");
+  const [cataloguswaarde, setCataloguswaarde] = useState("");
   const [brandstoftype, setBrandstoftype] = useState<Brandstoftype>("fossiel");
   const [jaar, setJaar] = useState(BIJTELLING_JAREN[0]);
 

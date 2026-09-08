@@ -8,11 +8,11 @@ import { formatCurrency } from "@/lib/formatting/currency";
 import { berekenEnergieverbruik } from "@/lib/calculations/energieverbruik";
 
 export function EnergieverbruikCalculator() {
-  const [stroom, setStroom] = useState("2900");
-  const [prijsStroom, setPrijsStroom] = useState("0.28");
-  const [gas, setGas] = useState("1200");
-  const [prijsGas, setPrijsGas] = useState("1.35");
-  const [vasteKosten, setVasteKosten] = useState("240");
+  const [stroom, setStroom] = useState("");
+  const [prijsStroom, setPrijsStroom] = useState("");
+  const [gas, setGas] = useState("");
+  const [prijsGas, setPrijsGas] = useState("");
+  const [vasteKosten, setVasteKosten] = useState("");
 
   const fields = {
     stroom: validateNumberInput(stroom, { fieldLabel: "stroomverbruik", min: 0, max: 1_000_000 }),

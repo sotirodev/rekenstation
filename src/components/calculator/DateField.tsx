@@ -67,11 +67,14 @@ export function DateField({
   const jaarMax = maxYear ?? huidigJaar + 10;
 
   const [parts, setParts] = useState(() => parseIso(value));
+  const [touched, setTouched] = useState(false);
   const { dag, maand, jaar } = parts;
   const maxDagen = maand && jaar ? daysInMonth(Number(maand), Number(jaar)) : 31;
+  const toonFout = touched ? error : undefined;
 
   function update(nieuweDag: string, nieuweMaand: string, nieuwJaar: string) {
     setParts({ dag: nieuweDag, maand: nieuweMaand, jaar: nieuwJaar });
+    setTouched(true);
 
     if (!nieuweDag || !nieuweMaand || !nieuwJaar) {
       onChange("");
@@ -87,7 +90,7 @@ export function DateField({
   }
 
   const selectClass = `rounded-lg border bg-surface px-2.5 py-2.5 text-base text-foreground outline-none transition-colors focus:ring-2 focus:ring-brand/40 ${
-    error ? "border-danger" : "border-border"
+    toonFout ? "border-danger" : "border-border"
   }`;
 
   return (
@@ -137,9 +140,9 @@ export function DateField({
           ))}
         </select>
       </div>
-      {error ? (
+      {toonFout ? (
         <p id={`${id}-error`} className="mt-1.5 text-sm text-danger">
-          {error}
+          {toonFout}
         </p>
       ) : (
         helperText && <p className="mt-1.5 text-sm text-muted">{helperText}</p>

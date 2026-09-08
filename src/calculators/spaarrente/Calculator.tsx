@@ -8,10 +8,10 @@ import { formatCurrency } from "@/lib/formatting/currency";
 import { berekenSpaarrente } from "@/lib/calculations/spaarrente";
 
 export function SpaarrenteCalculator() {
-  const [startkapitaal, setStartkapitaal] = useState("5000");
-  const [inleg, setInleg] = useState("100");
-  const [rente, setRente] = useState("2.5");
-  const [looptijd, setLooptijd] = useState("10");
+  const [startkapitaal, setStartkapitaal] = useState("");
+  const [inleg, setInleg] = useState("");
+  const [rente, setRente] = useState("");
+  const [looptijd, setLooptijd] = useState("");
 
   const fields = {
     startkapitaal: validateNumberInput(startkapitaal, { fieldLabel: "startkapitaal", min: 0, max: 100_000_000 }),

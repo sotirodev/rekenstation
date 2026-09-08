@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 interface NumberFieldProps {
   id: string;
   label: string;
@@ -21,6 +25,9 @@ export function NumberField({
   placeholder,
   inputMode = "decimal",
 }: NumberFieldProps) {
+  const [touched, setTouched] = useState(false);
+  const toonFout = touched ? error : undefined;
+
   return (
     <div>
       <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-foreground">
@@ -28,7 +35,7 @@ export function NumberField({
       </label>
       <div
         className={`flex items-center rounded-lg border bg-surface transition-colors focus-within:ring-2 focus-within:ring-brand/40 ${
-          error ? "border-danger" : "border-border"
+          toonFout ? "border-danger" : "border-border"
         }`}
       >
         {prefix && (
@@ -41,17 +48,18 @@ export function NumberField({
           value={value}
           placeholder={placeholder}
           onChange={(event) => onChange(event.target.value)}
-          aria-invalid={Boolean(error)}
-          aria-describedby={error ? `${id}-error` : undefined}
+          onBlur={() => setTouched(true)}
+          aria-invalid={Boolean(toonFout)}
+          aria-describedby={toonFout ? `${id}-error` : undefined}
           className="w-full rounded-lg bg-transparent px-3 py-2.5 text-base text-foreground outline-none placeholder:text-muted"
         />
         {suffix && (
           <span className="pr-3 text-sm text-muted select-none">{suffix}</span>
         )}
       </div>
-      {error && (
+      {toonFout && (
         <p id={`${id}-error`} className="mt-1.5 text-sm text-danger">
-          {error}
+          {toonFout}
         </p>
       )}
     </div>

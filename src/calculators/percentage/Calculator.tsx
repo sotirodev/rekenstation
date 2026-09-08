@@ -26,8 +26,8 @@ function labelVoorFout(modus: PercentageModus, veld: "a" | "b"): string {
 
 export function PercentageCalculator() {
   const [modus, setModus] = useState<PercentageModus>("percentage-van");
-  const [waardeA, setWaardeA] = useState("20");
-  const [waardeB, setWaardeB] = useState("150");
+  const [waardeA, setWaardeA] = useState("");
+  const [waardeB, setWaardeB] = useState("");
 
   const validatieA: ValidationResult = validateNumberInput(waardeA, {
     fieldLabel: labelVoorFout(modus, "a"),
