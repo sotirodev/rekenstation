@@ -16,7 +16,7 @@ export default function AlgemeneVoorwaardenPage() {
         {
           heading: "Gebruik van de website",
           body: [
-            "Rekenstation.nl, aangeboden door [Bedrijfsnaam], stelt gratis online calculators beschikbaar voor persoonlijk, niet-commercieel gebruik.",
+            "Rekenstation.nl stelt gratis online calculators beschikbaar voor persoonlijk, niet-commercieel gebruik. Vragen kun je stellen via [contact e-mail].",
           ],
         },
         {
@@ -28,7 +28,7 @@ export default function AlgemeneVoorwaardenPage() {
         {
           heading: "Aansprakelijkheid",
           body: [
-            "[Bedrijfsnaam] spant zich in om de calculators zo nauwkeurig mogelijk te houden, maar kan niet garanderen dat alle berekeningen te allen tijde volledig foutloos of actueel zijn. Aan de resultaten kunnen geen rechten worden ontleend.",
+            "Rekenstation spant zich in om de calculators zo nauwkeurig mogelijk te houden, maar kan niet garanderen dat alle berekeningen te allen tijde volledig foutloos of actueel zijn. Aan de resultaten kunnen geen rechten worden ontleend.",
           ],
         },
         {

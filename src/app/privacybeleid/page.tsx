@@ -16,7 +16,7 @@ export default function PrivacybeleidPage() {
         {
           heading: "Wie zijn wij",
           body: [
-            "Rekenstation.nl wordt beheerd door [Bedrijfsnaam], gevestigd te [Adres] (KVK-nummer: [KVK-nummer indien van toepassing]). Voor vragen over dit privacybeleid kun je contact opnemen via [Contact e-mail].",
+            "Rekenstation.nl wordt aangeboden onder de naam Rekenstation. Voor vragen over dit privacybeleid of over je gegevens kun je contact opnemen via [contact e-mail].",
           ],
         },
         {
@@ -30,7 +30,7 @@ export default function PrivacybeleidPage() {
         {
           heading: "Jouw rechten",
           body: [
-            "Je hebt het recht om je gegevens in te zien, te laten corrigeren of te laten verwijderen. Neem hiervoor contact met ons op via [Contact e-mail].",
+            "Je hebt het recht om je gegevens in te zien, te laten corrigeren of te laten verwijderen. Neem hiervoor contact met ons op via [contact e-mail].",
           ],
         },
         {
