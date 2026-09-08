@@ -11,7 +11,7 @@ export default function CookiebeleidPage() {
   return (
     <LegalPage
       title="Cookiebeleid"
-      intro="Laatst bijgewerkt: [datum]."
+      intro="Laatst bijgewerkt: 8 september 2026."
       sections={[
         {
           heading: "Wat zijn cookies",

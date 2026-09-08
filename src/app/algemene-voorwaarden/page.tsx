@@ -11,12 +11,12 @@ export default function AlgemeneVoorwaardenPage() {
   return (
     <LegalPage
       title="Algemene voorwaarden"
-      intro="Laatst bijgewerkt: [datum]."
+      intro="Laatst bijgewerkt: 8 september 2026."
       sections={[
         {
           heading: "Gebruik van de website",
           body: [
-            "Rekenstation.nl stelt gratis online calculators beschikbaar voor persoonlijk, niet-commercieel gebruik. Vragen kun je stellen via [contact e-mail].",
+            "Rekenstation.nl stelt gratis online calculators beschikbaar voor persoonlijk, niet-commercieel gebruik. Vragen kun je stellen via contact@rekenstation.nl.",
           ],
         },
         {

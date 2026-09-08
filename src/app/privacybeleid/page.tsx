@@ -11,12 +11,12 @@ export default function PrivacybeleidPage() {
   return (
     <LegalPage
       title="Privacybeleid"
-      intro="Laatst bijgewerkt: [datum]. Dit privacybeleid is opgesteld met inachtneming van de Algemene Verordening Gegevensbescherming (AVG)."
+      intro="Laatst bijgewerkt: 8 september 2026. Dit privacybeleid is opgesteld met inachtneming van de Algemene Verordening Gegevensbescherming (AVG)."
       sections={[
         {
           heading: "Wie zijn wij",
           body: [
-            "Rekenstation.nl wordt aangeboden onder de naam Rekenstation. Voor vragen over dit privacybeleid of over je gegevens kun je contact opnemen via [contact e-mail].",
+            "Rekenstation.nl wordt aangeboden onder de naam Rekenstation. Voor vragen over dit privacybeleid of over je gegevens kun je contact opnemen via contact@rekenstation.nl.",
           ],
         },
         {
@@ -30,7 +30,7 @@ export default function PrivacybeleidPage() {
         {
           heading: "Jouw rechten",
           body: [
-            "Je hebt het recht om je gegevens in te zien, te laten corrigeren of te laten verwijderen. Neem hiervoor contact met ons op via [contact e-mail].",
+            "Je hebt het recht om je gegevens in te zien, te laten corrigeren of te laten verwijderen. Neem hiervoor contact met ons op via contact@rekenstation.nl.",
           ],
         },
         {

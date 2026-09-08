@@ -17,7 +17,11 @@ export default function ContactPage() {
       </h1>
       <p className="mt-3 max-w-2xl text-muted">
         Heb je een vraag, suggestie of opmerking? Laat het ons weten via onderstaand formulier of
-        stuur een e-mail naar [contact e-mail].
+        stuur een e-mail naar{" "}
+        <a href="mailto:contact@rekenstation.nl" className="font-medium text-brand-dark hover:underline">
+          contact@rekenstation.nl
+        </a>
+        .
       </p>
 
       <div className="mt-8">

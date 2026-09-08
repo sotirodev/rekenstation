@@ -31,7 +31,11 @@ export function ContactForm() {
     return (
       <div className="rounded-xl border border-border bg-mint p-6 text-sm text-brand-dark">
         Bedankt, je invoer is gevalideerd. Dit contactformulier is nog niet gekoppeld aan een
-        verzendservice. Neem voor nu contact op via [contact e-mail].
+        verzendservice. Neem voor nu contact op via{" "}
+        <a href="mailto:contact@rekenstation.nl" className="underline">
+          contact@rekenstation.nl
+        </a>
+        .
       </div>
     );
   }
