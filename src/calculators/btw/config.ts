@@ -1,4 +1,4 @@
-import { Percent } from "lucide-react";
+import { Receipt } from "lucide-react";
 import type { CalculatorConfig } from "@/types/calculator";
 import { BtwCalculator } from "./Calculator";
 
@@ -7,7 +7,7 @@ export const btwConfig: CalculatorConfig = {
   title: "BTW calculator",
   shortTitle: "BTW calculator",
   category: "btw-belastingen",
-  icon: Percent,
+  icon: Receipt,
   summary: "Reken snel BTW om: exclusief naar inclusief en andersom.",
   metaDescription:
     "Bereken eenvoudig BTW: van exclusief naar inclusief, van inclusief naar exclusief, of alleen het BTW-bedrag, voor de tarieven 21%, 9% en 0%.",
