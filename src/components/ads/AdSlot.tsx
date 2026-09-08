@@ -7,10 +7,19 @@ const sizeByPosition: Record<AdPosition, string> = {
 };
 
 /**
- * Placeholder-advertentieruimte. Reserveert een vaste grootte zodat de layout
- * niet verspringt (CLS) wanneer hier later echte advertenties komen.
+ * Zet op true zodra er een AdSense-account is goedgekeurd en er echte
+ * advertentiecode in deze component is gezet. Tot die tijd rendert dit
+ * component niets, zodat bezoekers geen lege placeholder te zien krijgen.
+ */
+const ADS_ENABLED = false;
+
+/**
+ * Advertentieruimte. Reserveert een vaste grootte zodat de layout niet
+ * verspringt (CLS) zodra hier echte advertenties komen.
  */
 export function AdSlot({ position }: { position: AdPosition }) {
+  if (!ADS_ENABLED) return null;
+
   return (
     <div
       className={`flex items-center justify-center rounded-lg border border-dashed border-border bg-surface-muted text-xs text-muted ${sizeByPosition[position]}`}
