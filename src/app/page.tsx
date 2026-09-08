@@ -61,19 +61,21 @@ export default function Home() {
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-foreground">Categorieën</h2>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 lg:grid-cols-8">
             {categories.map((category) => {
               const Icon = category.icon;
               return (
                 <Link
                   key={category.slug}
                   href={`/${category.slug}`}
-                  className="group flex items-center gap-2 rounded-full border border-border bg-background py-2 pl-2.5 pr-4 text-sm font-medium text-foreground transition-all duration-150 hover:border-brand hover:text-brand-dark hover:shadow-sm"
+                  className="group flex flex-col items-center gap-3 text-center"
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-mint text-brand-dark transition-transform duration-150 group-hover:scale-110">
-                    <Icon className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-mint text-brand-dark transition-transform duration-200 ease-out group-hover:scale-110">
+                    <Icon className="h-6 w-6" strokeWidth={2} aria-hidden />
                   </span>
-                  {category.title}
+                  <span className="text-sm font-medium text-foreground transition-colors duration-150 group-hover:text-brand-dark">
+                    {category.title}
+                  </span>
                 </Link>
               );
             })}
