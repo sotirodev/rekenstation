@@ -25,9 +25,6 @@ export default function OverOnsPage() {
           De calculators zijn gebaseerd op officiële bronnen waar dat relevant is, zoals de
           Belastingdienst, en worden bijgewerkt wanneer regels of tarieven veranderen.
         </p>
-        <p>
-          Er komen regelmatig nieuwe calculators bij.
-        </p>
       </div>
     </div>
   );
