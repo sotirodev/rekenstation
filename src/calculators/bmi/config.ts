@@ -31,7 +31,7 @@ export const bmiConfig: CalculatorConfig = {
       answer: "Een BMI vanaf 25 wordt over het algemeen gezien als overgewicht, en vanaf 30 als obesitas.",
     },
   ],
-  relatedSlugs: ["calorie-calculator", "leeftijd-calculator"],
+  relatedSlugs: ["ideaal-gewicht-calculator", "lichaamsvetpercentage-calculator", "calorie-calculator"],
   popular: true,
   Component: BmiCalculator,
 };

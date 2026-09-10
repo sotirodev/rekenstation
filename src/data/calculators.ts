@@ -42,6 +42,12 @@ import { hoeveelProcentConfig } from "@/calculators/hoeveel-procent/config";
 import { procentueleVeranderingConfig } from "@/calculators/procentuele-verandering/config";
 import { uurloonNaarJaarsalarisConfig } from "@/calculators/uurloon-naar-jaarsalaris/config";
 import { jaarsalarisNaarUurloonConfig } from "@/calculators/jaarsalaris-naar-uurloon/config";
+import { ideaalGewichtConfig } from "@/calculators/ideaal-gewicht/config";
+import { samengesteldeInterestConfig } from "@/calculators/samengestelde-interest/config";
+import { hoeLaatSlapenConfig } from "@/calculators/hoe-laat-slapen/config";
+import { hoeLaatWordIkWakkerConfig } from "@/calculators/hoe-laat-word-ik-wakker/config";
+import { lichaamsvetpercentageConfig } from "@/calculators/lichaamsvetpercentage/config";
+import { tijdsverschilConfig } from "@/calculators/tijdsverschil/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -93,6 +99,12 @@ export const calculators: CalculatorConfig[] = [
   procentueleVeranderingConfig,
   uurloonNaarJaarsalarisConfig,
   jaarsalarisNaarUurloonConfig,
+  ideaalGewichtConfig,
+  samengesteldeInterestConfig,
+  hoeLaatSlapenConfig,
+  hoeLaatWordIkWakkerConfig,
+  lichaamsvetpercentageConfig,
+  tijdsverschilConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {
