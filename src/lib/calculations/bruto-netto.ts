@@ -101,6 +101,51 @@ function berekenArbeidskorting(jaarinkomen: number, jaar: number): number {
   return 0;
 }
 
+export interface NettoNaarBrutoInput {
+  netto: number;
+  periode: SalarisPeriode;
+  belastingjaar: number;
+  geboortedatum?: string;
+  loonheffingskorting: boolean;
+  peildatum?: Date;
+}
+
+/**
+ * Rekent een gewenst nettosalaris om naar het bijbehorende brutosalaris.
+ * De loonheffing is een stuksgewijze, monotoon stijgende functie van het
+ * brutoloon (elke extra euro bruto levert nooit minder netto op), dus een
+ * binaire zoekopdracht convergeert altijd naar een eenduidige oplossing.
+ */
+export function berekenNettoNaarBruto({
+  netto,
+  periode,
+  ...rest
+}: NettoNaarBrutoInput): BrutoNettoResult {
+  const periodesPerJaar = PERIODES_PER_JAAR[periode];
+  const doelNettoPerJaar = netto * periodesPerJaar;
+
+  const nettoBijBruto = (brutoPerJaar: number) =>
+    berekenBrutoNetto({ ...rest, periode: "jaar", bruto: brutoPerJaar }).nettoPerJaar;
+
+  let laag = 0;
+  let hoog = Math.max(doelNettoPerJaar * 2, 10_000);
+  while (nettoBijBruto(hoog) < doelNettoPerJaar) {
+    hoog *= 2;
+  }
+
+  for (let i = 0; i < 60; i++) {
+    const midden = (laag + hoog) / 2;
+    if (nettoBijBruto(midden) < doelNettoPerJaar) {
+      laag = midden;
+    } else {
+      hoog = midden;
+    }
+  }
+
+  const brutoPerJaar = (laag + hoog) / 2;
+  return berekenBrutoNetto({ ...rest, periode, bruto: brutoPerJaar / periodesPerJaar });
+}
+
 export function berekenBrutoNetto({
   bruto,
   periode,

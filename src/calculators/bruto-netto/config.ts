@@ -11,11 +11,11 @@ export const brutoNettoConfig: CalculatorConfig = {
   icon: Wallet,
   summary: "Bereken je netto salaris op basis van je brutosalaris.",
   metaDescription:
-    "Bereken snel je netto salaris uit je brutosalaris met de actuele Belastingdienst-tarieven. Gratis bruto-netto calculator voor " +
+    "Bereken snel je netto salaris uit je brutosalaris, of andersom, met de actuele Belastingdienst-tarieven. Gratis bruto-netto calculator voor " +
     defaultTaxYear +
     " en eerdere jaren.",
   intro:
-    "Vul je brutosalaris in en zie direct wat je netto overhoudt, op basis van de officiële Belastingdienst-tarieven.",
+    "Vul je brutosalaris in en zie direct wat je netto overhoudt, of reken andersom uit welk brutosalaris bij een gewenst netto bedrag hoort, op basis van de officiële Belastingdienst-tarieven.",
   explanation: {
     heading: "Hoe werkt deze berekening?",
     body: [
@@ -54,6 +54,11 @@ export const brutoNettoConfig: CalculatorConfig = {
       question: "Waarom houd ik van een loonsverhoging minder netto over dan verwacht?",
       answer:
         "Een loonsverhoging valt vaak deels in een hogere belastingschijf, en de heffingskortingen bouwen verder af naarmate je meer verdient. Daardoor gaat een groter deel van de verhoging naar de Belastingdienst dan van je basissalaris, ook al blijft het tarief per schijf gelijk.",
+    },
+    {
+      question: "Kan ik ook van netto naar bruto rekenen?",
+      answer:
+        "Ja, kies bovenaan de calculator voor 'Netto naar bruto' en vul het nettobedrag in dat je wilt overhouden. De calculator berekent dan welk brutosalaris daarbij hoort, met dezelfde tarieven en heffingskortingen als bij de andere richting.",
     },
   ],
   relatedSlugs: ["uurloon-calculator", "btw-calculator", "bmi-calculator"],

@@ -8,8 +8,14 @@ import { ResultCard } from "@/components/calculator/ResultCard";
 import { validateNumberInput } from "@/lib/validation/rules";
 import { formatCurrency } from "@/lib/formatting/currency";
 import { formatPercentage } from "@/lib/formatting/number";
-import { berekenBrutoNetto, type SalarisPeriode } from "@/lib/calculations/bruto-netto";
+import {
+  berekenBrutoNetto,
+  berekenNettoNaarBruto,
+  type SalarisPeriode,
+} from "@/lib/calculations/bruto-netto";
 import { availableTaxYears, defaultTaxYear } from "@/lib/tax-data";
+
+type Richting = "bruto-naar-netto" | "netto-naar-bruto";
 
 const PERIODE_OPTIES: { value: SalarisPeriode; label: string }[] = [
   { value: "dag", label: "Per dag" },
@@ -42,32 +48,56 @@ function valideerGeboortedatum(waarde: string): string | undefined {
   return undefined;
 }
 
+const RICHTING_OPTIES: { value: Richting; label: string }[] = [
+  { value: "bruto-naar-netto", label: "Bruto naar netto" },
+  { value: "netto-naar-bruto", label: "Netto naar bruto" },
+];
+
 export function BrutoNettoCalculator() {
+  const [richting, setRichting] = useState<Richting>("bruto-naar-netto");
   const [bruto, setBruto] = useState("");
+  const [netto, setNetto] = useState("");
   const [periode, setPeriode] = useState<SalarisPeriode>("maand");
   const [belastingjaar, setBelastingjaar] = useState(defaultTaxYear);
   const [geboortedatum, setGeboortedatum] = useState("");
   const [loonheffingskorting, setLoonheffingskorting] = useState(true);
 
-  const validation = validateNumberInput(bruto, {
+  const brutoValidation = validateNumberInput(bruto, {
     fieldLabel: "brutosalaris",
     min: 0,
     max: 1_000_000,
   });
+  const nettoValidation = validateNumberInput(netto, {
+    fieldLabel: "nettosalaris",
+    min: 0,
+    max: 1_000_000,
+  });
+  const validation = richting === "bruto-naar-netto" ? brutoValidation : nettoValidation;
   const geboortedatumError = valideerGeboortedatum(geboortedatum);
 
   const result = useMemo(() => {
     if (!validation.valid || geboortedatumError) return null;
-    return berekenBrutoNetto({
-      bruto: validation.value,
+    if (richting === "bruto-naar-netto") {
+      return berekenBrutoNetto({
+        bruto: brutoValidation.value,
+        periode,
+        belastingjaar,
+        geboortedatum: geboortedatum || undefined,
+        loonheffingskorting,
+      });
+    }
+    return berekenNettoNaarBruto({
+      netto: nettoValidation.value,
       periode,
       belastingjaar,
       geboortedatum: geboortedatum || undefined,
       loonheffingskorting,
     });
   }, [
+    richting,
     validation.valid,
-    validation.value,
+    brutoValidation.value,
+    nettoValidation.value,
     periode,
     belastingjaar,
     geboortedatum,
@@ -78,14 +108,34 @@ export function BrutoNettoCalculator() {
   return (
     <div className="rounded-xl border border-border bg-surface p-6">
       <div className="grid gap-4 sm:grid-cols-2">
-        <NumberField
-          id="bruto"
-          label="Brutosalaris"
-          value={bruto}
-          onChange={setBruto}
-          prefix="€"
-          error={validation.valid ? undefined : validation.error}
-        />
+        <div className="sm:col-span-2">
+          <SelectField
+            id="richting"
+            label="Ik wil berekenen"
+            value={richting}
+            onChange={(value) => setRichting(value as Richting)}
+            options={RICHTING_OPTIES}
+          />
+        </div>
+        {richting === "bruto-naar-netto" ? (
+          <NumberField
+            id="bruto"
+            label="Brutosalaris"
+            value={bruto}
+            onChange={setBruto}
+            prefix="€"
+            error={brutoValidation.valid ? undefined : brutoValidation.error}
+          />
+        ) : (
+          <NumberField
+            id="netto"
+            label="Nettosalaris"
+            value={netto}
+            onChange={setNetto}
+            prefix="€"
+            error={nettoValidation.valid ? undefined : nettoValidation.error}
+          />
+        )}
         <SelectField
           id="periode"
           label="Periode"
@@ -128,16 +178,27 @@ export function BrutoNettoCalculator() {
       {result && (
         <div className="mt-6">
           <ResultCard
-            heading={`Netto salaris (${belastingjaar})`}
+            heading={
+              richting === "bruto-naar-netto"
+                ? `Netto salaris (${belastingjaar})`
+                : `Bruto salaris (${belastingjaar})`
+            }
             primary={{
               label: PERIODE_LABELS[periode],
-              value: formatCurrency(result.nettoPerPeriode),
+              value: formatCurrency(
+                richting === "bruto-naar-netto" ? result.nettoPerPeriode : result.brutoPerPeriode,
+              ),
             }}
             rows={[
-              {
-                label: "Brutosalaris (jaar)",
-                value: formatCurrency(result.brutoPerJaar, false),
-              },
+              richting === "bruto-naar-netto"
+                ? {
+                    label: "Brutosalaris (jaar)",
+                    value: formatCurrency(result.brutoPerJaar, false),
+                  }
+                : {
+                    label: "Nettosalaris (jaar)",
+                    value: formatCurrency(result.nettoPerJaar, false),
+                  },
               {
                 label: "Loonheffing (jaar)",
                 value: formatCurrency(result.loonheffing, false),
