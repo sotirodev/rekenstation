@@ -17,7 +17,6 @@ export const transitievergoedingConfig: CalculatorConfig = {
     body: [
       "De transitievergoeding is 1/3 bruto maandsalaris per dienstjaar, naar rato voor een onvolledig jaar. Dit geldt vanaf de eerste werkdag, zonder minimale diensttijd.",
       "Er geldt een wettelijk maximumbedrag, of één bruto jaarsalaris als dat hoger is dan het maximum.",
-      "Bijvoorbeeld: bij 8 dienstjaren en een bruto maandsalaris van €3.000 kom je uit op een transitievergoeding van €8.000.",
     ],
   },
   faq: [

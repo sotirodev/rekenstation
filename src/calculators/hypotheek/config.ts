@@ -19,7 +19,6 @@ export const hypotheekConfig: CalculatorConfig = {
       "Bij een annuïtaire hypotheek betaal je elke maand hetzelfde bedrag, waarbij de verhouding tussen rente en aflossing gedurende de looptijd verschuift.",
       "Bij een lineaire hypotheek los je elke maand hetzelfde bedrag af, waardoor de rente (en dus de maandlast) geleidelijk daalt. De eerste maandlast is hierdoor hoger dan bij een annuïtaire hypotheek.",
       "Deze berekening is indicatief en houdt geen rekening met bijvoorbeeld hypotheekrenteaftrek, overlijdensrisicoverzekering of andere kosten.",
-      "Bijvoorbeeld: bij een hypotheek van €300.000, een rente van 4% en een looptijd van 30 jaar, betaal je bij een annuïtaire hypotheek €1.432,25 per maand.",
     ],
   },
   faq: [
