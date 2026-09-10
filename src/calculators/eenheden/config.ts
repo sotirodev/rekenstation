@@ -24,6 +24,11 @@ export const eenhedenConfig: CalculatorConfig = {
       answer: "Ja, voor lengte kun je omrekenen naar en van inch, foot en mile, en voor gewicht naar pond (lb) en ounce (oz).",
     },
   ],
-  relatedSlugs: ["percentage-calculator"],
+  relatedSlugs: [
+    "cm-naar-inch-calculator",
+    "km-naar-mijl-calculator",
+    "kg-naar-pond-calculator",
+    "percentage-calculator",
+  ],
   Component: EenhedenCalculator,
 };

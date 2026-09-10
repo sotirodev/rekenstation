@@ -27,15 +27,26 @@ const EENHEID_LABELS: Record<LengteEenheid | GewichtEenheid, string> = {
   g: "Gram (g)",
   kg: "Kilogram (kg)",
   ton: "Ton",
-  lb: "Pond (lb)",
+  pond: "Pond (500 g)",
+  lb: "Engels pond (lb)",
   oz: "Ounce (oz)",
 };
 
-export function EenhedenCalculator() {
-  const [categorie, setCategorie] = useState<EenhedenCategorie>("lengte");
+export interface EenhedenCalculatorProps {
+  initialCategorie?: EenhedenCategorie;
+  initialVan?: LengteEenheid | GewichtEenheid;
+  initialNaar?: LengteEenheid | GewichtEenheid;
+}
+
+export function EenhedenCalculator({
+  initialCategorie = "lengte",
+  initialVan = "m",
+  initialNaar = "cm",
+}: EenhedenCalculatorProps = {}) {
+  const [categorie, setCategorie] = useState<EenhedenCategorie>(initialCategorie);
   const [waarde, setWaarde] = useState("");
-  const [van, setVan] = useState<string>("m");
-  const [naar, setNaar] = useState<string>("cm");
+  const [van, setVan] = useState<string>(initialVan);
+  const [naar, setNaar] = useState<string>(initialNaar);
 
   const eenheden = categorie === "lengte" ? LENGTE_EENHEDEN : GEWICHT_EENHEDEN;
 
