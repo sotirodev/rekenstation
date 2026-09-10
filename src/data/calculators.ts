@@ -37,6 +37,11 @@ import { kgNaarPondConfig } from "@/calculators/kg-naar-pond/config";
 import { pondNaarKgConfig } from "@/calculators/pond-naar-kg/config";
 import { gramNaarOunceConfig } from "@/calculators/gram-naar-ounce/config";
 import { ounceNaarGramConfig } from "@/calculators/ounce-naar-gram/config";
+import { percentageVanGetalConfig } from "@/calculators/percentage-van-getal/config";
+import { hoeveelProcentConfig } from "@/calculators/hoeveel-procent/config";
+import { procentueleVeranderingConfig } from "@/calculators/procentuele-verandering/config";
+import { uurloonNaarJaarsalarisConfig } from "@/calculators/uurloon-naar-jaarsalaris/config";
+import { jaarsalarisNaarUurloonConfig } from "@/calculators/jaarsalaris-naar-uurloon/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -83,6 +88,11 @@ export const calculators: CalculatorConfig[] = [
   pondNaarKgConfig,
   gramNaarOunceConfig,
   ounceNaarGramConfig,
+  percentageVanGetalConfig,
+  hoeveelProcentConfig,
+  procentueleVeranderingConfig,
+  uurloonNaarJaarsalarisConfig,
+  jaarsalarisNaarUurloonConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {

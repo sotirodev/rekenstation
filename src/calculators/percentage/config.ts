@@ -30,6 +30,11 @@ export const percentageConfig: CalculatorConfig = {
         "Een negatief percentage bij 'stijging/daling' betekent dat de waarde is gedaald ten opzichte van de startwaarde.",
     },
   ],
-  relatedSlugs: ["btw-calculator", "bruto-netto-calculator"],
+  relatedSlugs: [
+    "procent-van-getal-calculator",
+    "hoeveel-procent-calculator",
+    "procentuele-verandering-calculator",
+    "btw-calculator",
+  ],
   Component: PercentageCalculator,
 };

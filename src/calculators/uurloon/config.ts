@@ -25,6 +25,10 @@ export const uurloonConfig: CalculatorConfig = {
         "Een jaar heeft 52 weken, dus gemiddeld 52/12 (ongeveer 4,33) weken per maand. Dit geeft een nauwkeuriger resultaat dan uitgaan van exact 4 weken per maand.",
     },
   ],
-  relatedSlugs: ["bruto-netto-calculator"],
+  relatedSlugs: [
+    "uurloon-naar-jaarsalaris-calculator",
+    "jaarsalaris-naar-uurloon-calculator",
+    "bruto-netto-calculator",
+  ],
   Component: UurloonCalculator,
 };
