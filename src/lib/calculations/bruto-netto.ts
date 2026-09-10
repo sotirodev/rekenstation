@@ -50,7 +50,9 @@ function heeftAowLeeftijdBereikt(
   peildatum: Date,
 ): boolean {
   const aowDatum = new Date(geboortedatum);
-  aowDatum.setFullYear(aowDatum.getFullYear() + aowLeeftijd);
+  // aowLeeftijd in maanden i.p.v. hele jaren, want sommige jaren (o.a. 2023: 66
+  // jaar en 10 maanden) kennen een AOW-leeftijd die niet op een heel jaar valt.
+  aowDatum.setMonth(aowDatum.getMonth() + Math.round(aowLeeftijd * 12));
   return peildatum >= aowDatum;
 }
 
