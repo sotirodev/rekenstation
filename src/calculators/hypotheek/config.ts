@@ -32,6 +32,16 @@ export const hypotheekConfig: CalculatorConfig = {
       answer:
         "Bij annuïtair aflossen blijft de maandlast gelijk, bij lineair aflossen daalt de maandlast geleidelijk omdat je steeds hetzelfde bedrag aflost over een dalende restschuld.",
     },
+    {
+      question: "Hoeveel kan ik maximaal lenen voor een hypotheek?",
+      answer:
+        "Dat hangt af van je inkomen, leeftijd, lopende leningen en de waarde van de woning. Als vuistregel mag je hypotheek meestal tot ongeveer 4,25 keer je bruto jaarinkomen bedragen, met een maximum van 100% van de woningwaarde. Deze calculator berekent de maandlasten bij een hypotheekbedrag dat je zelf invult; voor je persoonlijke maximale hypotheek kun je terecht bij een hypotheekadviseur of geldverstrekker.",
+    },
+    {
+      question: "Kan ik meer lenen als ik mijn woning verduurzaam?",
+      answer:
+        "Ja, voor energiebesparende maatregelen mag je hypotheek in sommige gevallen hoger uitvallen dan de woningwaarde, tot ongeveer 106%. De precieze voorwaarden verschillen per geldverstrekker.",
+    },
   ],
   relatedSlugs: ["bruto-netto-calculator", "uurloon-calculator"],
   popular: true,

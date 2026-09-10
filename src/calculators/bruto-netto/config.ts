@@ -45,6 +45,16 @@ export const brutoNettoConfig: CalculatorConfig = {
       answer:
         "Ja, als je een geboortedatum invult. De calculator bepaalt dan automatisch of je de AOW-leeftijd hebt bereikt en past het bijbehorende (lagere) tarief in de eerste schijf toe.",
     },
+    {
+      question: "Hoeveel belasting betaal ik gemiddeld over mijn salaris?",
+      answer:
+        "Dat hangt sterk af van je inkomen. Bij de meeste salarissen ligt het percentage dat je aan loonheffing kwijt bent tussen de 25% en 35%, omdat een deel van je inkomen in een hogere belastingschijf valt en de heffingskortingen afbouwen naarmate je meer verdient. Vul je brutosalaris hierboven in voor je exacte percentage.",
+    },
+    {
+      question: "Waarom houd ik van een loonsverhoging minder netto over dan verwacht?",
+      answer:
+        "Een loonsverhoging valt vaak deels in een hogere belastingschijf, en de heffingskortingen bouwen verder af naarmate je meer verdient. Daardoor gaat een groter deel van de verhoging naar de Belastingdienst dan van je basissalaris, ook al blijft het tarief per schijf gelijk.",
+    },
   ],
   relatedSlugs: ["uurloon-calculator", "btw-calculator", "bmi-calculator"],
   popular: true,

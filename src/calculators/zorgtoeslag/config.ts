@@ -30,6 +30,16 @@ export const zorgtoeslagConfig: CalculatorConfig = {
       answer:
         "Meestal je echtgenoot, geregistreerd partner, of iemand waarmee je een gezamenlijke huishouding voert en op hetzelfde adres staat ingeschreven. Kijk op toeslagen.nl voor de exacte voorwaarden.",
     },
+    {
+      question: "Tot welk inkomen heb ik recht op zorgtoeslag?",
+      answer:
+        "In 2026 vervalt je recht op zorgtoeslag bij een jaarinkomen vanaf €40.857 zonder toeslagpartner, of €51.142 gezamenlijk inkomen met een toeslagpartner. Deze grenzen zijn al verwerkt in de berekening hierboven.",
+    },
+    {
+      question: "Telt mijn spaargeld mee voor de zorgtoeslag?",
+      answer:
+        "Ja, naast inkomen geldt er ook een vermogensgrens. Heb je samen met eventuele beleggingen meer vermogen dan de grens die de Belastingdienst hanteert, dan vervalt het recht op zorgtoeslag, ook als je inkomen onder de grens blijft. Deze berekening houdt alleen rekening met inkomen; kijk voor de actuele vermogensgrens op de site van de Belastingdienst.",
+    },
   ],
   relatedSlugs: ["bruto-netto-calculator"],
   popular: true,

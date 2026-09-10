@@ -31,6 +31,16 @@ export const btwConfig: CalculatorConfig = {
       answer:
         "Kies de optie 'Bedrag is inclusief BTW' en vul het totaalbedrag in. De calculator berekent dan automatisch het bedrag exclusief BTW en het BTW-bedrag.",
     },
+    {
+      question: "Hoe tel ik 21% BTW op bij een bedrag?",
+      answer:
+        "Vermenigvuldig het bedrag exclusief BTW met 1,21. Bijvoorbeeld: €100 keer 1,21 is €121 inclusief BTW. Kies bij deze calculator de optie 'exclusief naar inclusief' om dit automatisch te laten uitrekenen.",
+    },
+    {
+      question: "Wat gaat er vaak fout bij het terugrekenen van BTW?",
+      answer:
+        "Een veelgemaakte fout is 21% aftrekken van een bedrag inclusief BTW. Dat klopt niet, omdat de BTW al onderdeel is van dat totaalbedrag. Je deelt het bedrag door 1,21 (of door 1,09 bij het verlaagde tarief) om het bedrag exclusief BTW te vinden.",
+    },
   ],
   relatedSlugs: ["percentage-calculator", "bruto-netto-calculator"],
   popular: true,
