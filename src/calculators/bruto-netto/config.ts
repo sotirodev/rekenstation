@@ -22,6 +22,7 @@ export const brutoNettoConfig: CalculatorConfig = {
       "Deze calculator berekent je loonheffing op basis van de officiële Nederlandse belastingschijven (box 1) voor het gekozen belastingjaar. Van je brutoloon wordt eerst de belasting over de schijven berekend, waarna de algemene heffingskorting en arbeidskorting worden afgetrokken (tenzij je aangeeft dat de loonheffingskorting niet van toepassing is).",
       "Vul je geboortedatum in als je wilt dat de calculator rekening houdt met het lagere AOW-tarief in de eerste schijf. Laat je dit veld leeg, dan gaat de berekening uit van iemand onder de AOW-leeftijd.",
       "Het resultaat is een indicatie. De werkelijke inhoudingen op je loonstrook kunnen afwijken door bijvoorbeeld pensioenpremie, de inkomensafhankelijke bijdrage Zvw, of persoonlijke omstandigheden die niet in deze berekening zijn meegenomen.",
+      "Bijvoorbeeld: bij een bruto jaarsalaris van €50.000 hou je in 2026 ongeveer €39.140 netto over, met loonheffingskorting en onder de AOW-leeftijd.",
     ],
   },
   faq: [

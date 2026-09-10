@@ -17,6 +17,7 @@ export const zorgtoeslagConfig: CalculatorConfig = {
     body: [
       "Zorgtoeslag is een bijdrage in de kosten van je zorgverzekering. Hoe hoger je inkomen, hoe lager de toeslag; boven een bepaalde inkomensgrens krijg je geen zorgtoeslag meer.",
       "Heb je een toeslagpartner, dan telt jullie gezamenlijke verzamelinkomen mee en geldt een hogere inkomensgrens, maar ook een andere berekening.",
+      "Bijvoorbeeld: bij een verzamelinkomen van €25.000 zonder toeslagpartner krijg je in 2026 ongeveer €136,75 per maand aan zorgtoeslag.",
     ],
   },
   faq: [

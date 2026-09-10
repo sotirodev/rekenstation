@@ -17,6 +17,7 @@ export const overdrachtsbelastingConfig: CalculatorConfig = {
     body: [
       "Ga je zelf in de woning wonen, dan geldt het verlaagde tarief van 2%. Kom je in aanmerking voor de startersvrijstelling (18 tot en met 34 jaar, eenmalig, en de woning blijft onder de geldende woningwaardegrens), dan betaal je 0%.",
       "Koop je een woning als belegging of tweede huis, of een bedrijfspand, dan geldt een hoger tarief. Voor niet-woningen (zoals bedrijfspanden) blijft dit tarief in 2025 en 2026 gelijk; voor beleggingswoningen daalt het tarief in 2026.",
+      "Bijvoorbeeld: bij een aankoopprijs van €400.000 als hoofdverblijf betaal je €8.000 overdrachtsbelasting (2%). Kom je in aanmerking voor de startersvrijstelling, dan betaal je niets.",
     ],
   },
   faq: [

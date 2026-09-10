@@ -18,6 +18,7 @@ export const btwConfig: CalculatorConfig = {
     body: [
       "In Nederland gelden drie BTW-tarieven: 21% (algemeen tarief), 9% (verlaagd tarief, bijvoorbeeld voedingsmiddelen) en 0% (bijvoorbeeld bij export).",
       "Bij 'exclusief naar inclusief' wordt het BTW-bedrag bij het bedrag opgeteld. Bij 'inclusief naar exclusief' wordt de BTW uit het totaalbedrag berekend.",
+      "Bijvoorbeeld: €100 exclusief BTW wordt met het tarief van 21% €121 inclusief BTW.",
     ],
   },
   faq: [

@@ -17,6 +17,7 @@ export const bijtellingConfig: CalculatorConfig = {
     body: [
       "De bijtelling wordt berekend als percentage van de cataloguswaarde (de nieuwprijs inclusief btw en BPM) van de auto. Voor gewone auto's geldt een vast percentage. Voor volledig elektrische auto's geldt een lager percentage tot een bepaalde cataloguswaarde; boven die grens geldt het gewone percentage over het meerdere.",
       "Het bijtellingspercentage wordt vastgesteld in het jaar van eerste tenaamstelling en geldt vervolgens 60 maanden, ook als het percentage in latere jaren verandert.",
+      "Bijvoorbeeld: bij een volledig elektrische auto met een cataloguswaarde van €40.000 wordt in 2026 €7.600 per jaar bij je inkomen opgeteld (18% over de eerste €30.000, plus 22% over de resterende €10.000).",
     ],
   },
   faq: [
