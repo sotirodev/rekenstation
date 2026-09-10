@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     "online calculators Nederland",
   ],
   authors: [{ name: "Rekenstation" }],
+  other: {
+    "google-adsense-account": "ca-pub-5540080208382917",
+  },
   openGraph: {
     type: "website",
     locale: "nl_NL",
