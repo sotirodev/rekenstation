@@ -1,6 +1,7 @@
 import { Breadcrumbs, type Crumb } from "@/components/navigation/Breadcrumbs";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
+import { Faq, faqPageJsonLd } from "@/components/calculator/Faq";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getCategory } from "@/data/categories";
 import { getCalculatorsBySlug } from "@/data/calculators";
@@ -36,14 +37,16 @@ export function CalculatorShell({ calculator }: { calculator: CalculatorConfig }
         operatingSystem: "Any",
         offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
       },
-      ...(calculator.faq.length > 0
+      ...(calculator.faq.length > 0 ? [faqPageJsonLd(calculator.faq)] : []),
+      ...(calculator.howToSteps && calculator.howToSteps.length > 0
         ? [
             {
-              "@type": "FAQPage",
-              mainEntity: calculator.faq.map((item) => ({
-                "@type": "Question",
-                name: item.question,
-                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              "@type": "HowTo",
+              name: calculator.title,
+              step: calculator.howToSteps.map((tekst, index) => ({
+                "@type": "HowToStep",
+                position: index + 1,
+                text: tekst,
               })),
             },
           ]
@@ -69,6 +72,10 @@ export function CalculatorShell({ calculator }: { calculator: CalculatorConfig }
         <AdSlot position="between-content" />
       </div>
 
+      {calculator.howToSteps && calculator.howToSteps.length > 0 && (
+        <HowToSteps steps={calculator.howToSteps} />
+      )}
+
       <Explanation calculator={calculator} />
 
       {calculator.faq.length > 0 && <Faq items={calculator.faq} />}
@@ -87,6 +94,24 @@ export function CalculatorShell({ calculator }: { calculator: CalculatorConfig }
   );
 }
 
+function HowToSteps({ steps }: { steps: string[] }) {
+  return (
+    <section className="mt-10">
+      <h2 className="text-xl font-semibold text-foreground">In stappen</h2>
+      <ol className="mt-4 space-y-3">
+        {steps.map((stap, index) => (
+          <li key={index} className="flex gap-3">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-mint text-sm font-semibold text-brand-dark">
+              {index + 1}
+            </span>
+            <span className="text-[15px] leading-relaxed text-foreground/90">{stap}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
 function Explanation({ calculator }: { calculator: CalculatorConfig }) {
   return (
     <section className="mt-10">
@@ -96,24 +121,6 @@ function Explanation({ calculator }: { calculator: CalculatorConfig }) {
       <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-foreground/90">
         {calculator.explanation.body.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Faq({ items }: { items: CalculatorConfig["faq"] }) {
-  return (
-    <section className="mt-10">
-      <h2 className="text-xl font-semibold text-foreground">Veelgestelde vragen</h2>
-      <div className="mt-4 divide-y divide-border rounded-xl border border-border bg-surface">
-        {items.map((item) => (
-          <details key={item.question} className="group p-4">
-            <summary className="cursor-pointer list-none font-medium text-foreground marker:content-none">
-              {item.question}
-            </summary>
-            <p className="mt-2 text-sm text-muted">{item.answer}</p>
-          </details>
         ))}
       </div>
     </section>

@@ -1,10 +1,11 @@
 import { CarFront } from "lucide-react";
 import type { CalculatorConfig } from "@/types/calculator";
+import { BIJTELLING_JAREN } from "@/lib/calculations/bijtelling";
 import { BijtellingCalculator } from "./Calculator";
 
 export const bijtellingConfig: CalculatorConfig = {
   slug: "bijtelling-calculator",
-  title: "Bijtelling calculator",
+  title: `Bijtelling calculator ${BIJTELLING_JAREN[0]}`,
   shortTitle: "Bijtelling calculator",
   category: "auto-vervoer",
   icon: CarFront,

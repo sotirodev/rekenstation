@@ -21,6 +21,7 @@ export interface Category {
   description: string;
   /** Langere introductietekst, getoond bovenaan de categoriepagina zelf. */
   intro: string;
+  faq: FaqItem[];
   icon: LucideIcon;
 }
 
@@ -45,5 +46,7 @@ export interface CalculatorConfig {
   faq: FaqItem[];
   relatedSlugs: string[];
   popular?: boolean;
+  /** Korte, genummerde stappen voor HowTo-structured data. Alleen bij calculators waar dat de moeite waard is. */
+  howToSteps?: string[];
   Component: ComponentType;
 }

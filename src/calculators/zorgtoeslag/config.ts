@@ -1,10 +1,11 @@
 import { HeartHandshake } from "lucide-react";
 import type { CalculatorConfig } from "@/types/calculator";
+import { ZORGTOESLAG_JAREN } from "@/lib/calculations/zorgtoeslag";
 import { ZorgtoeslagCalculator } from "./Calculator";
 
 export const zorgtoeslagConfig: CalculatorConfig = {
   slug: "zorgtoeslag-calculator",
-  title: "Zorgtoeslag calculator",
+  title: `Zorgtoeslag calculator ${ZORGTOESLAG_JAREN[0]}`,
   shortTitle: "Zorgtoeslag calculator",
   category: "toeslagen",
   icon: HeartHandshake,

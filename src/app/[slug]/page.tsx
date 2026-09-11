@@ -5,7 +5,9 @@ import { categories, getCategory } from "@/data/categories";
 import type { CalculatorConfig } from "@/types/calculator";
 import { CalculatorShell } from "@/components/calculator/CalculatorShell";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
+import { Faq, faqPageJsonLd } from "@/components/calculator/Faq";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 function buildKeywords(calculator: CalculatorConfig): string[] {
   const category = getCategory(calculator.category);
@@ -69,9 +71,23 @@ export default async function SlugPage({ params }: PageProps<"/[slug]">) {
   const category = getCategory(slug);
   if (category) {
     const items = getCalculatorsByCategory(category.slug);
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            { "@type": "ListItem", position: 2, name: category.title },
+          ],
+        },
+        ...(category.faq.length > 0 ? [faqPageJsonLd(category.faq)] : []),
+      ],
+    };
 
     return (
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <JsonLd data={jsonLd} />
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: category.title }]} />
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink dark:text-foreground">
           {category.title} calculators
@@ -88,6 +104,12 @@ export default async function SlugPage({ params }: PageProps<"/[slug]">) {
           <p className="mt-8 text-sm text-muted">
             Er zijn nog geen calculators in deze categorie. Kom binnenkort terug.
           </p>
+        )}
+
+        {category.faq.length > 0 && (
+          <div className="mt-4 max-w-3xl">
+            <Faq items={category.faq} />
+          </div>
         )}
       </div>
     );

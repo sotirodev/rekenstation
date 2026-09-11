@@ -1,10 +1,11 @@
 import { LogOut } from "lucide-react";
 import type { CalculatorConfig } from "@/types/calculator";
+import { TRANSITIEVERGOEDING_JAREN } from "@/lib/calculations/transitievergoeding";
 import { TransitievergoedingCalculator } from "./Calculator";
 
 export const transitievergoedingConfig: CalculatorConfig = {
   slug: "transitievergoeding-calculator",
-  title: "Transitievergoeding calculator",
+  title: `Transitievergoeding calculator ${TRANSITIEVERGOEDING_JAREN[0]}`,
   shortTitle: "Transitievergoeding calculator",
   category: "geld-salaris",
   icon: LogOut,
@@ -32,5 +33,12 @@ export const transitievergoedingConfig: CalculatorConfig = {
     },
   ],
   relatedSlugs: ["bruto-netto-calculator", "vakantiegeld-calculator"],
+  howToSteps: [
+    "Vul je bruto maandsalaris in, inclusief vakantietoeslag en vaste looncomponenten.",
+    "Vul de startdatum van je dienstverband in.",
+    "Vul de einddatum van je dienstverband in.",
+    "Kies het jaar waarin het dienstverband eindigt.",
+    "Bekijk direct je geschatte transitievergoeding.",
+  ],
   Component: TransitievergoedingCalculator,
 };

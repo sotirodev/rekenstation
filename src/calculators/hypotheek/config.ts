@@ -44,6 +44,13 @@ export const hypotheekConfig: CalculatorConfig = {
     },
   ],
   relatedSlugs: ["bruto-netto-calculator", "uurloon-calculator"],
+  howToSteps: [
+    "Vul het hypotheekbedrag in dat je wilt lenen.",
+    "Vul de rente per jaar in die je geldverstrekker hanteert.",
+    "Kies de looptijd in jaren, meestal 30 jaar.",
+    "Kies annuïtair of lineair aflossen.",
+    "Bekijk direct je geschatte maandlasten, totale rente en totale kosten.",
+  ],
   popular: true,
   Component: HypotheekCalculator,
 };

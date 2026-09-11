@@ -5,7 +5,7 @@ import { BrutoNettoCalculator } from "./Calculator";
 
 export const brutoNettoConfig: CalculatorConfig = {
   slug: "bruto-netto-calculator",
-  title: "Bruto netto calculator",
+  title: `Bruto netto calculator ${defaultTaxYear}`,
   shortTitle: "Bruto-netto calculator",
   category: "geld-salaris",
   icon: Wallet,

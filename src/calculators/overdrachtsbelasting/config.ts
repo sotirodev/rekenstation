@@ -1,10 +1,11 @@
 import { FileStack } from "lucide-react";
 import type { CalculatorConfig } from "@/types/calculator";
+import { OVERDRACHTSBELASTING_JAREN } from "@/lib/calculations/overdrachtsbelasting";
 import { OverdrachtsbelastingCalculator } from "./Calculator";
 
 export const overdrachtsbelastingConfig: CalculatorConfig = {
   slug: "overdrachtsbelasting-calculator",
-  title: "Overdrachtsbelasting calculator",
+  title: `Overdrachtsbelasting calculator ${OVERDRACHTSBELASTING_JAREN[0]}`,
   shortTitle: "Overdrachtsbelasting calculator",
   category: "wonen-hypotheek",
   icon: FileStack,
