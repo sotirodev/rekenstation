@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { calculators, getPopularCalculators } from "@/data/calculators";
@@ -5,6 +6,10 @@ import { categories } from "@/data/categories";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
 import { HeroSearch } from "@/components/calculator/HeroSearch";
 import { JsonLd } from "@/components/seo/JsonLd";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
