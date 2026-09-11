@@ -60,14 +60,6 @@ export function CalculatorShell({ calculator }: { calculator: CalculatorConfig }
         {calculator.title}
       </h1>
       <p className="mt-3 text-base text-muted">{calculator.intro}</p>
-      {calculator.laatstGecontroleerd && (
-        <p className="mt-1 text-xs text-muted">
-          Cijfers laatst gecontroleerd op{" "}
-          {new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "long", year: "numeric" }).format(
-            new Date(calculator.laatstGecontroleerd),
-          )}
-        </p>
-      )}
 
       <div className="mt-6">
         <CalculatorComponent />

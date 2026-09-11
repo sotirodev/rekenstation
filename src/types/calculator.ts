@@ -45,7 +45,5 @@ export interface CalculatorConfig {
   faq: FaqItem[];
   relatedSlugs: string[];
   popular?: boolean;
-  /** ISO-datum (YYYY-MM-DD). Alleen zetten bij calculators met jaarlijks wijzigende officiële cijfers. */
-  laatstGecontroleerd?: string;
   Component: ComponentType;
 }
