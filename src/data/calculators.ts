@@ -48,6 +48,11 @@ import { hoeLaatSlapenConfig } from "@/calculators/hoe-laat-slapen/config";
 import { hoeLaatWordIkWakkerConfig } from "@/calculators/hoe-laat-word-ik-wakker/config";
 import { lichaamsvetpercentageConfig } from "@/calculators/lichaamsvetpercentage/config";
 import { tijdsverschilConfig } from "@/calculators/tijdsverschil/config";
+import { calorieenSportenConfig } from "@/calculators/calorieen-sporten/config";
+import { hartslagzonesConfig } from "@/calculators/hartslagzones/config";
+import { afvallenConfig } from "@/calculators/afvallen/config";
+import { leningConfig } from "@/calculators/lening/config";
+import { overurenConfig } from "@/calculators/overuren/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -105,6 +110,11 @@ export const calculators: CalculatorConfig[] = [
   hoeLaatWordIkWakkerConfig,
   lichaamsvetpercentageConfig,
   tijdsverschilConfig,
+  calorieenSportenConfig,
+  hartslagzonesConfig,
+  afvallenConfig,
+  leningConfig,
+  overurenConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {

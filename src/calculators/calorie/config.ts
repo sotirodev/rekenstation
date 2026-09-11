@@ -32,6 +32,6 @@ export const calorieConfig: CalculatorConfig = {
         "Nee, dit is een schatting bedoeld ter indicatie. Raadpleeg bij vragen over voeding of gewicht een arts of diëtist.",
     },
   ],
-  relatedSlugs: ["bmi-calculator"],
+  relatedSlugs: ["bmi-calculator", "calorieen-verbranden-sporten-calculator", "afvallen-calculator"],
   Component: CalorieCalculator,
 };

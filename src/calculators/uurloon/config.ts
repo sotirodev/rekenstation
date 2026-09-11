@@ -28,6 +28,7 @@ export const uurloonConfig: CalculatorConfig = {
   relatedSlugs: [
     "uurloon-naar-jaarsalaris-calculator",
     "jaarsalaris-naar-uurloon-calculator",
+    "overuren-calculator",
     "bruto-netto-calculator",
   ],
   Component: UurloonCalculator,
