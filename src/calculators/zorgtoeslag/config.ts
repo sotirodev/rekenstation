@@ -42,6 +42,7 @@ export const zorgtoeslagConfig: CalculatorConfig = {
     },
   ],
   relatedSlugs: ["bruto-netto-calculator"],
+  laatstGecontroleerd: "2026-09-11",
   popular: true,
   Component: ZorgtoeslagCalculator,
 };

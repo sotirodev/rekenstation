@@ -19,6 +19,8 @@ export interface Category {
   slug: CategorySlug;
   title: string;
   description: string;
+  /** Langere introductietekst, getoond bovenaan de categoriepagina zelf. */
+  intro: string;
   icon: LucideIcon;
 }
 
@@ -43,5 +45,7 @@ export interface CalculatorConfig {
   faq: FaqItem[];
   relatedSlugs: string[];
   popular?: boolean;
+  /** ISO-datum (YYYY-MM-DD). Alleen zetten bij calculators met jaarlijks wijzigende officiële cijfers. */
+  laatstGecontroleerd?: string;
   Component: ComponentType;
 }

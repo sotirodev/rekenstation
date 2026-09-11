@@ -32,5 +32,6 @@ export const transitievergoedingConfig: CalculatorConfig = {
     },
   ],
   relatedSlugs: ["bruto-netto-calculator", "vakantiegeld-calculator"],
+  laatstGecontroleerd: "2026-09-11",
   Component: TransitievergoedingCalculator,
 };

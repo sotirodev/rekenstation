@@ -76,7 +76,7 @@ export default async function SlugPage({ params }: PageProps<"/[slug]">) {
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink dark:text-foreground">
           {category.title} calculators
         </h1>
-        <p className="mt-3 max-w-2xl text-muted">{category.description}</p>
+        <p className="mt-3 max-w-2xl text-muted">{category.intro}</p>
 
         {items.length > 0 ? (
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

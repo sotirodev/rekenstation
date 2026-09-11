@@ -62,6 +62,7 @@ export const brutoNettoConfig: CalculatorConfig = {
     },
   ],
   relatedSlugs: ["uurloon-calculator", "btw-calculator", "bmi-calculator"],
+  laatstGecontroleerd: "2026-09-11",
   popular: true,
   Component: BrutoNettoCalculator,
 };

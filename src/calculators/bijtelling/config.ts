@@ -32,5 +32,6 @@ export const bijtellingConfig: CalculatorConfig = {
     },
   ],
   relatedSlugs: ["autokosten-calculator", "bruto-netto-calculator"],
+  laatstGecontroleerd: "2026-09-11",
   Component: BijtellingCalculator,
 };
