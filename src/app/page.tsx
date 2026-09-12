@@ -5,6 +5,7 @@ import { calculators, getPopularCalculators } from "@/data/calculators";
 import { categories } from "@/data/categories";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
 import { HeroSearch } from "@/components/calculator/HeroSearch";
+import { FavorietenSectie, OnlangsBekekenSectie } from "@/components/calculator/PersoonlijkeSecties";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
@@ -54,6 +55,8 @@ export default function Home() {
         </div>
       </section>
 
+      <FavorietenSectie />
+
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-semibold text-foreground">Meest gebruikte calculators</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -62,6 +65,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <OnlangsBekekenSectie />
 
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">

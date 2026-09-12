@@ -2,6 +2,8 @@ import { Breadcrumbs, type Crumb } from "@/components/navigation/Breadcrumbs";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
 import { Faq, faqPageJsonLd } from "@/components/calculator/Faq";
+import { FavoriteButton } from "@/components/calculator/FavoriteButton";
+import { TrackRecentlyViewed } from "@/components/calculator/TrackRecentlyViewed";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getCategory } from "@/data/categories";
 import { getCalculatorsBySlug } from "@/data/calculators";
@@ -57,11 +59,15 @@ export function CalculatorShell({ calculator }: { calculator: CalculatorConfig }
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
       <JsonLd data={jsonLd} />
+      <TrackRecentlyViewed slug={calculator.slug} />
       <Breadcrumbs items={breadcrumbItems} />
 
-      <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink dark:text-foreground sm:text-4xl">
-        {calculator.title}
-      </h1>
+      <div className="mt-4 flex items-start justify-between gap-3">
+        <h1 className="text-3xl font-bold tracking-tight text-ink dark:text-foreground sm:text-4xl">
+          {calculator.title}
+        </h1>
+        <FavoriteButton slug={calculator.slug} className="mt-1 shrink-0" />
+      </div>
       <p className="mt-3 text-base text-muted">{calculator.intro}</p>
 
       <div className="mt-6">
