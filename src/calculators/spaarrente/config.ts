@@ -26,6 +26,6 @@ export const spaarrenteConfig: CalculatorConfig = {
         "Nee, deze calculator houdt geen rekening met box 3-belasting over je vermogen. Het werkelijke rendement na belasting kan lager uitvallen.",
     },
   ],
-  relatedSlugs: ["samengestelde-interest-calculator", "bruto-netto-calculator"],
+  relatedSlugs: ["samengestelde-interest-calculator", "pensioen-opbouw-calculator"],
   Component: SpaarrenteCalculator,
 };

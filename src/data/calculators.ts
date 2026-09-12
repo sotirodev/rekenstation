@@ -53,6 +53,11 @@ import { hartslagzonesConfig } from "@/calculators/hartslagzones/config";
 import { afvallenConfig } from "@/calculators/afvallen/config";
 import { leningConfig } from "@/calculators/lening/config";
 import { overurenConfig } from "@/calculators/overuren/config";
+import { stroomkostenApparaatConfig } from "@/calculators/stroomkosten-apparaat/config";
+import { douchekostenConfig } from "@/calculators/douchekosten/config";
+import { nettoUurloonConfig } from "@/calculators/netto-uurloon/config";
+import { pensioenOpbouwConfig } from "@/calculators/pensioen-opbouw/config";
+import { zwangerschapsverlofConfig } from "@/calculators/zwangerschapsverlof/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -115,6 +120,11 @@ export const calculators: CalculatorConfig[] = [
   afvallenConfig,
   leningConfig,
   overurenConfig,
+  stroomkostenApparaatConfig,
+  douchekostenConfig,
+  nettoUurloonConfig,
+  pensioenOpbouwConfig,
+  zwangerschapsverlofConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {

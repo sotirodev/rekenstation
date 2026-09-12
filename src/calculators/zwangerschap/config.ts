@@ -31,6 +31,6 @@ export const zwangerschapConfig: CalculatorConfig = {
         "Bij een afwijkende cyclus kan de werkelijke uitgerekende datum iets verschillen. Bespreek dit met je verloskundige.",
     },
   ],
-  relatedSlugs: ["leeftijd-calculator", "bmi-calculator"],
+  relatedSlugs: ["zwangerschapsverlof-calculator", "leeftijd-calculator", "bmi-calculator"],
   Component: ZwangerschapCalculator,
 };

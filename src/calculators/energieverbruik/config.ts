@@ -26,6 +26,6 @@ export const energieverbruikConfig: CalculatorConfig = {
         "Je jaarverbruik staat op je laatste jaarafrekening of in de app van je energieleverancier. De tarieven staan op je contract of factuur.",
     },
   ],
-  relatedSlugs: ["bruto-netto-calculator"],
+  relatedSlugs: ["stroomkosten-apparaat-calculator", "douchekosten-calculator"],
   Component: EnergieverbruikCalculator,
 };
