@@ -12,6 +12,8 @@ interface CalculatorExplorerProps {
   initialQuery?: string;
 }
 
+const ALFABET = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+
 function sorteerAlfabetisch(items: CalculatorConfig[]): CalculatorConfig[] {
   return [...items].sort((a, b) => a.shortTitle.localeCompare(b.shortTitle, "nl"));
 }
@@ -22,6 +24,7 @@ export function CalculatorExplorer({
 }: CalculatorExplorerProps) {
   const [query, setQuery] = useState(initialQuery);
   const [categoryFilter, setCategoryFilter] = useState<string>("alle");
+  const [letterFilter, setLetterFilter] = useState<string | null>(null);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -30,16 +33,26 @@ export function CalculatorExplorer({
     calculator.title.toLowerCase().includes(normalizedQuery) ||
     calculator.summary.toLowerCase().includes(normalizedQuery);
 
-  const filtered = useMemo(() => {
-    return sorteerAlfabetisch(
-      calculators.filter(
-        (calculator) =>
-          (categoryFilter === "alle" || calculator.category === categoryFilter) &&
-          matchesQuery(calculator),
-      ),
+  const inCategorieEnZoekopdracht = useMemo(() => {
+    return calculators.filter(
+      (calculator) =>
+        (categoryFilter === "alle" || calculator.category === categoryFilter) && matchesQuery(calculator),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [normalizedQuery, categoryFilter]);
+
+  const beschikbareLetters = useMemo(
+    () => new Set(inCategorieEnZoekopdracht.map((c) => c.shortTitle[0]?.toUpperCase())),
+    [inCategorieEnZoekopdracht],
+  );
+
+  const filtered = useMemo(() => {
+    return sorteerAlfabetisch(
+      inCategorieEnZoekopdracht.filter(
+        (calculator) => !letterFilter || calculator.shortTitle.toUpperCase().startsWith(letterFilter),
+      ),
+    );
+  }, [inCategorieEnZoekopdracht, letterFilter]);
 
   return (
     <div>
@@ -74,6 +87,19 @@ export function CalculatorExplorer({
         ))}
       </div>
 
+      <div className="mt-3 flex flex-wrap gap-1">
+        <LetterPill label="A-Z" active={letterFilter === null} onClick={() => setLetterFilter(null)} />
+        {ALFABET.map((letter) => (
+          <LetterPill
+            key={letter}
+            label={letter}
+            active={letterFilter === letter}
+            disabled={!beschikbareLetters.has(letter)}
+            onClick={() => setLetterFilter(letter)}
+          />
+        ))}
+      </div>
+
       {filtered.length > 0 ? (
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((calculator) => (
@@ -82,7 +108,7 @@ export function CalculatorExplorer({
         </div>
       ) : (
         <p className="mt-8 text-sm text-muted">
-          Geen calculators gevonden. Probeer een andere zoekterm of categorie.
+          Geen calculators gevonden. Probeer een andere zoekterm, letter of categorie.
         </p>
       )}
     </div>
@@ -106,6 +132,35 @@ function FilterPill({
         active
           ? "border-brand bg-mint text-brand-dark"
           : "border-border text-muted hover:border-brand"
+      }`}
+    >
+      {label}
+    </button>
+  );
+}
+
+function LetterPill({
+  label,
+  active,
+  disabled = false,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  disabled?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      className={`flex h-8 min-w-8 items-center justify-center rounded-md border px-2 text-sm font-medium transition-colors ${
+        active
+          ? "border-brand bg-mint text-brand-dark"
+          : disabled
+            ? "border-transparent text-muted/40"
+            : "border-transparent text-muted hover:border-brand hover:text-brand-dark"
       }`}
     >
       {label}
