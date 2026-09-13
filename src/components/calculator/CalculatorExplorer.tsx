@@ -5,10 +5,15 @@ import { Search } from "lucide-react";
 import { CalculatorCard } from "@/components/calculator/CalculatorCard";
 import { calculators } from "@/data/calculators";
 import { categories } from "@/data/categories";
+import type { CalculatorConfig } from "@/types/calculator";
 
 interface CalculatorExplorerProps {
   placeholder?: string;
   initialQuery?: string;
+}
+
+function sorteerAlfabetisch(items: CalculatorConfig[]): CalculatorConfig[] {
+  return [...items].sort((a, b) => a.shortTitle.localeCompare(b.shortTitle, "nl"));
 }
 
 export function CalculatorExplorer({
@@ -18,20 +23,33 @@ export function CalculatorExplorer({
   const [query, setQuery] = useState(initialQuery);
   const [categoryFilter, setCategoryFilter] = useState<string>("alle");
 
+  const normalizedQuery = query.trim().toLowerCase();
+  const isSearching = normalizedQuery !== "";
+
+  const matchesQuery = (calculator: CalculatorConfig) =>
+    normalizedQuery === "" ||
+    calculator.title.toLowerCase().includes(normalizedQuery) ||
+    calculator.summary.toLowerCase().includes(normalizedQuery);
+
   const filtered = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
+    return calculators.filter(
+      (calculator) =>
+        (categoryFilter === "alle" || calculator.category === categoryFilter) &&
+        matchesQuery(calculator),
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [normalizedQuery, categoryFilter]);
 
-    return calculators.filter((calculator) => {
-      const matchesCategory =
-        categoryFilter === "alle" || calculator.category === categoryFilter;
-      const matchesQuery =
-        normalizedQuery === "" ||
-        calculator.title.toLowerCase().includes(normalizedQuery) ||
-        calculator.summary.toLowerCase().includes(normalizedQuery);
+  const gegroepeerd = useMemo(() => {
+    if (isSearching || categoryFilter !== "alle") return null;
 
-      return matchesCategory && matchesQuery;
-    });
-  }, [query, categoryFilter]);
+    return categories
+      .map((category) => ({
+        category,
+        items: sorteerAlfabetisch(calculators.filter((c) => c.category === category.slug)),
+      }))
+      .filter((group) => group.items.length > 0);
+  }, [isSearching, categoryFilter]);
 
   return (
     <div>
@@ -66,9 +84,32 @@ export function CalculatorExplorer({
         ))}
       </div>
 
-      {filtered.length > 0 ? (
+      {gegroepeerd ? (
+        gegroepeerd.length > 0 ? (
+          <div className="mt-8 space-y-10">
+            {gegroepeerd.map(({ category, items }) => {
+              const Icon = category.icon;
+              return (
+                <section key={category.slug}>
+                  <h2 className="flex items-center gap-2 text-lg font-semibold text-foreground">
+                    <Icon className="h-5 w-5 text-brand-dark" strokeWidth={2} aria-hidden />
+                    {category.title}
+                  </h2>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {items.map((calculator) => (
+                      <CalculatorCard key={calculator.slug} calculator={calculator} />
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="mt-8 text-sm text-muted">Er zijn nog geen calculators beschikbaar.</p>
+        )
+      ) : sorteerAlfabetisch(filtered).length > 0 ? (
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((calculator) => (
+          {sorteerAlfabetisch(filtered).map((calculator) => (
             <CalculatorCard key={calculator.slug} calculator={calculator} />
           ))}
         </div>
