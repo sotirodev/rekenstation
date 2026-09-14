@@ -57,6 +57,13 @@ const themeInitScript = `
 })();
 `;
 
+const gtagInitScript = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JS0CPPKBR6');
+`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -74,6 +81,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           crossOrigin="anonymous"
           strategy="beforeInteractive"
         />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JS0CPPKBR6" strategy="beforeInteractive" />
+        <Script id="gtag-init" strategy="beforeInteractive">
+          {gtagInitScript}
+        </Script>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
