@@ -17,8 +17,8 @@ export function CookieBanner() {
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-foreground/90">
-          Rekenstation gebruikt cookies voor websitestatistieken (Google Analytics) en om
-          straks advertenties te kunnen tonen (Google AdSense). Lees meer in ons{" "}
+          Wij gebruiken cookies om websiteverkeer te analyseren en advertenties te kunnen
+          tonen. Lees meer in ons{" "}
           <Link href="/cookiebeleid" className="underline hover:text-brand-dark">
             cookiebeleid
           </Link>
