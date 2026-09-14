@@ -29,6 +29,11 @@ export const pensioenOpbouwConfig: CalculatorConfig = {
       answer:
         "Nee, deze calculator berekent alleen de groei van een vermogen op basis van jouw eigen invoer. Voor een volledig beeld van je pensioen kun je terecht op mijnpensioenoverzicht.nl.",
     },
+    {
+      question: "Wat is het verschil tussen AOW en pensioen opbouwen?",
+      answer:
+        "AOW is de basisuitkering van de overheid die iedereen krijgt vanaf de AOW-leeftijd, ongeacht of je hebt gewerkt. Pensioen opbouwen (via een werkgever of eigen inleg, zoals in deze calculator) is een aanvulling daarop, en de hoogte hangt af van hoeveel je hebt ingelegd en het rendement daarop.",
+    },
   ],
   relatedSlugs: ["samengestelde-interest-calculator", "spaarrente-calculator"],
   Component: PensioenOpbouwCalculator,

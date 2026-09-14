@@ -41,8 +41,13 @@ export const zorgtoeslagConfig: CalculatorConfig = {
       answer:
         "Ja, naast inkomen geldt er ook een vermogensgrens. Heb je samen met eventuele beleggingen meer vermogen dan de grens die de Belastingdienst hanteert, dan vervalt het recht op zorgtoeslag, ook als je inkomen onder de grens blijft. Deze berekening houdt alleen rekening met inkomen; kijk voor de actuele vermogensgrens op de site van de Belastingdienst.",
     },
+    {
+      question: "Hoe vaak wordt zorgtoeslag uitbetaald?",
+      answer:
+        "Zorgtoeslag wordt maandelijks vooruitbetaald door Dienst Toeslagen, meestal rond de 20e van de maand. Je kunt ook kiezen voor uitbetaling in één keer achteraf, na afloop van het jaar.",
+    },
   ],
-  relatedSlugs: ["bruto-netto-calculator"],
+  relatedSlugs: ["huurtoeslag-calculator", "bruto-netto-calculator"],
   popular: true,
   Component: ZorgtoeslagCalculator,
 };

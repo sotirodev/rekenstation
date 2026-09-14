@@ -58,6 +58,7 @@ import { douchekostenConfig } from "@/calculators/douchekosten/config";
 import { nettoUurloonConfig } from "@/calculators/netto-uurloon/config";
 import { pensioenOpbouwConfig } from "@/calculators/pensioen-opbouw/config";
 import { zwangerschapsverlofConfig } from "@/calculators/zwangerschapsverlof/config";
+import { huurtoeslagConfig } from "@/calculators/huurtoeslag/config";
 
 /**
  * Registry van alle calculators. Een nieuwe calculator toevoegen:
@@ -125,6 +126,7 @@ export const calculators: CalculatorConfig[] = [
   nettoUurloonConfig,
   pensioenOpbouwConfig,
   zwangerschapsverlofConfig,
+  huurtoeslagConfig,
 ];
 
 export function getCalculator(slug: string): CalculatorConfig | undefined {
