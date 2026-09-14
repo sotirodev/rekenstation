@@ -11,7 +11,7 @@ export default function PrivacybeleidPage() {
   return (
     <LegalPage
       title="Privacybeleid"
-      intro="Laatst bijgewerkt: 8 september 2026. Dit privacybeleid is opgesteld met inachtneming van de Algemene Verordening Gegevensbescherming (AVG)."
+      intro="Laatst bijgewerkt: 14 september 2026. Dit privacybeleid is opgesteld met inachtneming van de Algemene Verordening Gegevensbescherming (AVG)."
       sections={[
         {
           heading: "Wie zijn wij",
@@ -24,7 +24,7 @@ export default function PrivacybeleidPage() {
           body: [
             "De calculators op Rekenstation.nl werken volledig in je browser: de bedragen en waarden die je invult, worden niet naar onze servers verzonden of opgeslagen.",
             "Als je het contactformulier gebruikt, verwerken wij de gegevens die je zelf invult (naam, e-mailadres en bericht) om je vraag te kunnen beantwoorden.",
-            "Wanneer analytics of andere trackingtools worden toegevoegd, wordt dit privacybeleid aangevuld met informatie over welke gegevens hiervoor worden verwerkt en op welke rechtsgrond.",
+            "Met jouw toestemming gebruiken wij Google Analytics om websitestatistieken bij te houden (zoals bezoekersaantallen en welke pagina's populair zijn) en Google AdSense om advertenties te tonen. Deze diensten kunnen daarbij (pseudonieme) gegevens over je bezoek verwerken, zoals je IP-adres en surfgedrag op onze site. Dit gebeurt alleen nadat je hiervoor toestemming hebt gegeven via de cookiemelding; je kunt deze toestemming op elk moment intrekken via 'Cookie-instellingen' onderaan de site. Zie ons cookiebeleid voor meer details.",
           ],
         },
         {

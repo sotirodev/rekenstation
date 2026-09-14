@@ -4,6 +4,8 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@/components/cookies/Analytics";
+import { CookieBanner } from "@/components/cookies/CookieBanner";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -57,13 +59,6 @@ const themeInitScript = `
 })();
 `;
 
-const gtagInitScript = `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-JS0CPPKBR6');
-`;
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -75,19 +70,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5540080208382917"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JS0CPPKBR6" strategy="beforeInteractive" />
-        <Script id="gtag-init" strategy="beforeInteractive">
-          {gtagInitScript}
-        </Script>
+        <Analytics />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

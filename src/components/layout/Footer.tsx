@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { CookieSettingsLink } from "@/components/cookies/CookieSettingsLink";
 
 const calculatorLinks = [
   { href: "/calculators", label: "Alle calculators" },
@@ -50,6 +51,9 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsLink />
+              </li>
             </ul>
           </div>
         </div>
